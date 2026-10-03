@@ -21,7 +21,7 @@ const MODS=[
 ["Sound Muter","Rewrite","Meteor's SoundBlocker rewritten: mutes specific sounds picked from a sound list, client-side."],
 ["Tab Complete Privacy","Rewrite","Meteor-style TabCompletePrivacy rewritten: cancels tab-complete packets that would leak private commands - block all, or block by prefixes, words or symbols."],
 ["Tab Logger","Rewrite","Meteor-style TabLogger rewritten: keeps a per-server history of every tab-list player (uuid, name, ping history) in a text file."],
-["Universal Flight","Main","Enables flight every tick: vanilla creative flight with adjustable speed."],
+["Universal Flight","Main","Vanilla creative flight with adjustable speed. Force it on all the time, or toggle it with a double-jump like creative (always-fly option)."],
 ["Waypoint","Main","Stores waypoints added with .mfwaypoint and renders beacon-like beams to them."],
 ["Whitelist Fast Use","Main","Toggles Meteor's FastUse automatically based on the item you're holding."],
 ["World Origin","Main","Example module that highlights the center of the world."],

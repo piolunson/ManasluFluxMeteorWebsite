@@ -2,25 +2,25 @@ const MODS=[
 ["Auto Eat","Main","Automatically eats food from your hotbar when hungry."],
 ["Auto Fish","Main","Throws the rod, reels in fish, looks up and recasts."],
 ["Auto Log","Main","Disconnects when your health drops below a threshold."],
-["Auto Respawn","Main","RyanWare port: auto-clicks respawn on the death screen, then optionally runs commands or chat lines, one per tick."],
-["Auto Responder","Main","RyanWare port: replies to chat automatically via trigger=response pairs, with an anti-loop cooldown."],
+["Auto Respawn","Rewrite","Meteor's AutoRespawn rewritten: auto-clicks respawn on the death screen, then optionally runs commands or chat lines, one per tick."],
+["Auto Responder","Rewrite","Meteor's AutoResponder rewritten: replies to chat automatically via trigger=response pairs, with an anti-loop cooldown."],
 ["Auto Walk Hold","Main","Holds a key (default 2) down, even after screens open or the window loses focus."],
 ["Block Replacer","Main","Places the same block back when one of your placed blocks gets mined or removed."],
 ["Boat Flight","Main","Fly while riding a boat. Horizontal and vertical speed settings; jump goes up, sneak goes down."],
-["Chat Logger","Main","RyanWare port: logs incoming and outgoing chat including commands to a file, fresh log per game join, custom path format."],
-["Click TP","Main","RyanWare port: hold use while looking at a block to teleport there in configurable steps, with max distance, safe-landing check and delay."],
-["Clicker","Main","RyanWare port: left/right auto clicker with Nothing, Hold and Click modes and per-action tick delays."],
+["Chat Logger","Rewrite","Meteor-style ChatLogger rewritten: logs incoming and outgoing chat including commands to a file, fresh log per game join, custom path format."],
+["Click TP","Rewrite","Meteor's ClickTP rewritten: hold use while looking at a block to teleport there in configurable steps, with max distance, safe-landing check and delay."],
+["Clicker","Rewrite","Meteor-style Clicker rewritten: left/right auto clicker with Nothing, Hold and Click modes and per-action tick delays."],
 ["Death Coords","Main","Prints (and optionally copies) your coordinates the moment you die."],
-["Death Commands","Main","RyanWare port: sends a random message or command when you die, with delay range and chance settings."],
+["Death Commands","Rewrite","Meteor-style DeathCommands rewritten: sends a random message or command when you die, with delay range and chance settings."],
 ["Elytra Flight","Main","Controlled elytra flight without fireworks, with horizontal and vertical speed."],
 ["Instant TNT","Main","Ignites TNT just by looking at it, using a silent switch to flint & steel or fire charge. Click Through Walls ignites TNT behind walls and around corners."],
 ["Mute","Main","Hides chat messages from muted players or containing muted phrases (client-side)."],
-["Packet Limiter","Main","RyanWare port: caps outgoing packets per tick (keep-alive and pong always allowed) so laggy modules can't get you kicked for flooding."],
+["Packet Limiter","Rewrite","Meteor-style PacketLimiter rewritten: caps outgoing packets per tick (keep-alive and pong always allowed) so laggy modules can't get you kicked for flooding."],
 ["Path","Main","Draws a line from you to a target set with .mfpath. Doesn't work yet."],
 ["Pearl Phase","Main","Port of BlackOut's Auto Pearl: one-shot pearl at your own block to clip inside walls. Rotates, throws, restores your view and hotbar, then toggles off. Instant rotation and keep-rotation options."],
-["Sound Blocker","Main","RyanWare port: mutes specific sounds picked from a sound list, client-side."],
-["Tab Complete Privacy","Main","RyanWare port: cancels tab-complete packets that would leak private commands - block all, or block by prefixes, words or symbols."],
-["Tab Logger","Main","RyanWare port: keeps a per-server history of every tab-list player (uuid, name, ping history) in a text file."],
+["Sound Muter","Rewrite","Meteor's SoundBlocker rewritten: mutes specific sounds picked from a sound list, client-side."],
+["Tab Complete Privacy","Rewrite","Meteor-style TabCompletePrivacy rewritten: cancels tab-complete packets that would leak private commands - block all, or block by prefixes, words or symbols."],
+["Tab Logger","Rewrite","Meteor-style TabLogger rewritten: keeps a per-server history of every tab-list player (uuid, name, ping history) in a text file."],
 ["Universal Flight","Main","Enables flight every tick: vanilla creative flight with adjustable speed."],
 ["Waypoint","Main","Stores waypoints added with .mfwaypoint and renders beacon-like beams to them."],
 ["Whitelist Fast Use","Main","Toggles Meteor's FastUse automatically based on the item you're holding."],
@@ -59,7 +59,7 @@ const CMDS=[
 [".mfuuid","Show your in-game UUID."],
 [".mfwaypoint","Add, list or clear waypoints."]
 ];
-const cats=["All","Main","Client Side","Combat"];
+const cats=["All","Main","Client Side","Combat","Rewrite"];
 let cat="All";
 const $=s=>document.querySelector(s);
 const tabs=$("#tabs"),grid=$("#grid"),q=$("#q");

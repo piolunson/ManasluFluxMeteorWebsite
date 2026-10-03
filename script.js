@@ -20,7 +20,7 @@ const MODS=[
 ["Toggle Tab","Client Side","Keeps the player list open by making the game think you're holding Tab."],
 ["Universal Colored Chat","Client Side","Replaces every & in chat with the color code sign."],
 ["Auto Totem","Combat","Instantly refills a totem of undying into your offhand when it's used or pops."],
-["Crystal Aura","Combat","Places end crystals on bases next to the nearest enemy and pops them. Silent, no rotations. Pause while mining or eating."],
+["Crystal Aura","Combat","Port of Meteor's CrystalAura: simulates crystal damage for every base and pops the best one. Face place, support blocks, max self damage. Silent."],
 ["Silent Aura","Combat","Attacks the nearest player without rotating or swinging your visible hand. Silent aim (body or head) plus a silent weapon switch. Pause while mining or eating."],
 ["TNT Placer","Combat","Traps the nearest player in (crying) obsidian, buries them in TNT and ignites it, non-stop."]
 ];

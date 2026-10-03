@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ManasluFlux — Meteor Client addon for Minecraft 26.2</title>
+<meta name="description" content="24 modules, 23 commands and 3 HUD elements for Meteor Client on Fabric.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="progress" aria-hidden="true"></div>
+<div class="bg" aria-hidden="true"></div>
+<div class="glow" aria-hidden="true"></div>
+<canvas id="petals" aria-hidden="true"></canvas>
+
+<header class="nav">
+  <a class="brand" href="#top">ManasluFlux</a>
+  <nav>
+    <a href="#modules">Modules</a>
+    <a href="#commands">Commands</a>
+    <a href="#hud">HUD</a>
+    <a href="#history">Changelog</a>
+    <a class="btn small" href="#download">Download</a>
+  </nav>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <p class="chip">v0.3.3 · Minecraft 26.2 · Fabric · Meteor Client</p>
+    <h1 id="title" aria-label="ManasluFlux"><em>Manaslu</em><span>Flux</span></h1>
+    <p class="lead">A Meteor Client addon with flight, silent combat, client-side tricks and a handful of tools you'll actually keep enabled.</p>
+    <div class="cta">
+      <a class="btn shine" href="#download">Download v0.3.3</a>
+      <a class="btn ghost" href="#modules">Browse the modules</a>
+    </div>
+    <ul class="stats">
+      <li><b data-count="24">0</b> modules</li>
+      <li><b data-count="23">0</b> commands</li>
+      <li><b data-count="3">0</b> HUD elements</li>
+    </ul>
+  </section>
+
+  <section id="modules" class="panel">
+    <div class="head">
+      <h2>Modules</h2>
+      <input id="q" type="search" placeholder="Search modules…" aria-label="Search modules">
+    </div>
+    <div class="tabs" id="tabs" role="tablist"></div>
+    <div class="grid" id="grid"></div>
+  </section>
+
+  <section id="commands" class="panel">
+    <div class="head"><h2>Commands</h2><p class="sub">Type them in Meteor's command prompt. Click one to copy it.</p></div>
+    <div class="cmds" id="cmds"></div>
+  </section>
+
+  <section id="hud" class="panel">
+    <div class="head"><h2>HUD elements</h2><p class="sub">Add them from the HUD editor, in the “Manaslu Flux” group.</p></div>
+    <div class="hudrow">
+      <article><h3>Image</h3><p>Shows a png, jpg, bmp or the first frame of a gif, from an absolute path or relative to <code>.minecraft</code>. Scale, opacity and smooth/nearest filtering.</p></article>
+      <article><h3>GIF</h3><p>Animated GIFs with each frame's real delay. Only re-uploads a frame when it changes. Same settings as Image.</p></article>
+      <article><h3>Example</h3><p>The template element: “ManasluFlux” on a gray quad. Handy as a starting point for your own.</p></article>
+    </div>
+  </section>
+
+  <section id="history" class="panel">
+    <div class="head"><h2>Changelog</h2></div>
+    <ol class="log">
+      <li><b>0.3.3</b><span>Auto-pause for the auras: Crystal Aura and Silent Aura now have a Pause settings group — pause while you are mining a block and pause while you are eating or drinking. Both are on by default.</span></li>
+      <li><b>0.3.2</b><span>Website launch. Site version and download jar now track every addon build.</span></li>
+      <li><b>0.3.1</b><span>New <code>.mfjavascript</code> command: asks a question in a Yes/No dialog — Yes crashes the game with a proper crash report, No rains confetti for a few seconds.</span></li>
+      <li><b>0.3.0</b><span>Pearl Phase completely reworked to actually function: tick-based rotation-then-throw, clean hotbar swap (no more eaten blocks or hotbar desync), rotation restore. CC bypass removed.</span></li>
+      <li><b>0.2.9</b><span>Pearl Phase rewritten as a port of BlackOut's Auto Pearl (own-block clip, CC bypass, switch modes, instant rotation). Silent Aura gained silent aim. Instant TNT gained click-through-walls ignition.</span></li>
+      <li><b>0.2.8</b><span>Pearl Phase module added.</span></li>
+      <li><b>0.2.7</b><span>Version bump of the Image/GIF/Auto Walk build.</span></li>
+      <li><b>0.2.6</b><span>Image and GIF HUD elements, Auto Walk Hold module.</span></li>
+      <li><b>≤ 0.2.5</b><span>Base addon: modules, commands and HUD.</span></li>
+    </ol>
+  </section>
+
+  <section id="download" class="panel dl">
+    <h2>Get the jar</h2>
+    <p class="sub">Drop <code>manasluflux-0.3.3.jar</code> into your <code>mods</code> folder next to Meteor Client.</p>
+    <a class="btn shine" href="downloads/manasluflux-0.3.3.jar" download id="dlbtn">manasluflux-0.3.3.jar</a>
+    <p class="fine">Requires Minecraft 26.2, Fabric Loader and Meteor Client.</p>
+  </section>
+</main>
+
+<footer>Made by piolunson · ManasluFlux</footer>
+<script src="script.js"></script>
+</body>
+</html>

@@ -8,7 +8,7 @@
 *{box-sizing:border-box;margin:0}
 html{scroll-behavior:smooth}
 body{font:400 17px/1.6 var(--body);color:var(--ink);background:var(--plum);min-height:100vh}
-.bg{position:fixed;inset:-40px;z-index:-2;background:url(assets/bg.png) center/cover;filter:blur(14px) saturate(1.1) brightness(.62)}
+.bg{position:fixed;inset:-40px;z-index:-2;background:url(bg.png) center/cover;filter:blur(14px) saturate(1.1) brightness(.62)}
 .bg::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(42,20,36,.2),rgba(42,20,36,.75))}
 #petals{position:fixed;inset:0;z-index:-1;pointer-events:none;width:100%;height:100%}
 a{color:inherit;text-decoration:none}

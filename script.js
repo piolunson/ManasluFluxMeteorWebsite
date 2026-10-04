@@ -13,7 +13,7 @@ const MODS=[
 ["Death Coords","Main","Prints (and optionally copies) your coordinates the moment you die."],
 ["Death Commands","Rewrite","Meteor-style DeathCommands rewritten: sends a random message or command when you die, with delay range and chance settings."],
 ["Elytra Flight","Main","Controlled elytra flight without fireworks, with horizontal and vertical speed. Toggleable auto-forward: off = thrust only while holding the forward key."],
-["Instant TNT","Main","Ignites TNT just by looking at it, using a silent switch to flint & steel or fire charge. Click Through Walls ignites TNT behind walls and around corners. Falls back to placing a redstone block next to the TNT when you have no igniter - and mines that block straight back during the fuse with a silent pickaxe swap."],
+["Instant TNT","Main","Ignites TNT just by looking at it, using a silent switch to flint & steel or fire charge. Click Through Walls ignites TNT behind walls and around corners. Falls back to placing a redstone block next to the TNT when you have no igniter (mined straight back during the fuse), and last of all shoots the TNT with a Flame bow."],
 ["Mute","Main","Hides chat messages from muted players or containing muted phrases (client-side)."],
 ["Packet Limiter","Rewrite","Meteor-style PacketLimiter rewritten: caps outgoing packets per tick (keep-alive and pong always allowed) so laggy modules can't get you kicked for flooding."],
 ["Path","Main","Draws a line from you to a target set with .mfpath. Doesn't work yet."],

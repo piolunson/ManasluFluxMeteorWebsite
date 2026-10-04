@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>ManasluFlux — Meteor Client addon for Minecraft 26.2</title>    <meta name="description" content="35 modules across four categories, 23 commands and 3 HUD elements for Meteor Client on Fabric.">
+<title>ManasluFlux — Meteor Client addon for Minecraft 26.2</title>    <meta name="description" content="35 modules across four categories, 23 commands and 4 HUD elements for Meteor Client on Fabric.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
@@ -28,18 +28,18 @@
 
 <main id="top">
   <section class="hero">
-    <p class="chip">v0.3.11 · Minecraft 26.2 · Fabric · Meteor Client</p>
+    <p class="chip">v0.3.12 · Minecraft 26.2 · Fabric · Meteor Client</p>
     <h1 id="title" aria-label="ManasluFlux"><em>Manaslu</em><span>Flux</span></h1>
     <p class="lead">A Meteor Client addon with flight, silent combat, client-side tricks and a handful of tools you'll actually keep enabled.</p>
     <div class="cta">
-      <a class="btn shine" href="#download">Download v0.3.11</a>
+      <a class="btn shine" href="#download">Download v0.3.12</a>
       <a class="btn ghost" href="#modules">Browse the modules</a>
       <a class="btn ghost" href="https://github.com/piolunson/manasluflux" target="_blank" rel="noopener">GitHub</a>
     </div>
     <ul class="stats">
       <li><b data-count="35">0</b> modules</li>
       <li><b data-count="23">0</b> commands</li>
-      <li><b data-count="3">0</b> HUD elements</li>
+      <li><b data-count="4">0</b> HUD elements</li>
     </ul>
   </section>
 
@@ -63,23 +63,24 @@
       <article><h3>Image</h3><p>Shows a png, jpg, bmp or the first frame of a gif, from an absolute path or relative to <code>.minecraft</code>. Scale, opacity and smooth/nearest filtering.</p></article>
       <article><h3>GIF</h3><p>Animated GIFs with each frame's real delay. Only re-uploads a frame when it changes. Same settings as Image.</p></article>
       <article><h3>Example</h3><p>The template element: “ManasluFlux” on a gray quad. Handy as a starting point for your own.</p></article>
+      <article><h3>Player List</h3><p>A box with all the other players on the server, sorted by name or ping — color-coded ms, custom title, max rows. Drag and scale it in the HUD editor.</p></article>
     </div>
   </section>
 
   <section id="history" class="panel">
     <div class="head"><h2>Changelog</h2></div>
     <ol class="log">
+      <li><b>0.3.12</b><span>New HUD element “Player List”: a box with every other player on the server, sorted by name or ping, with color-coded pings, custom title and a max-rows cap — drag/scale it in the HUD editor.</span></li>
       <li><b>0.3.11</b><span>All four module categories now have item icons in Meteor's GUI: nether star (Manaslu Flux), oak sign (Client Side), end crystal (Combat) and enchanted book (Rewrite).</span></li>
       <li><b>0.3.10</b><span>Elytra Flight: new “auto-forward” toggle (off by default) — turn it on for the old constant thrust, or leave it off and thrust only while holding the forward key, so you can glide and steer yourself. Jump = up, sneak = down work either way.</span></li>
       <li><b>0.3.9</b><span>Universal Flight: new “always-fly” option — turn it off to toggle flight with a double-jump like creative mode instead of flying non-stop.</span></li>
-      <li><b>0.3.8</b><span>New module Auto Login (Client Side): sends your login command with a password automatically after joining — or when chat says "register". Default: /login 12345678.</span></li>
     </ol>
   </section>
 
   <section id="download" class="panel dl">
     <h2>Get the jar</h2>
-    <p class="sub">Drop <code>manasluflux-0.3.11.jar</code> into your <code>mods</code> folder next to Meteor Client.</p>
-    <a class="btn shine" href="downloads/manasluflux-0.3.11.jar" download id="dlbtn">manasluflux-0.3.11.jar</a>
+    <p class="sub">Drop <code>manasluflux-0.3.12.jar</code> into your <code>mods</code> folder next to Meteor Client.</p>
+    <a class="btn shine" href="downloads/manasluflux-0.3.12.jar" download id="dlbtn">manasluflux-0.3.12.jar</a>
     <p class="fine">Requires Minecraft 26.2, Fabric Loader and Meteor Client.</p>
   </section>
 </main>

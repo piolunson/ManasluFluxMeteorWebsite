@@ -18,6 +18,7 @@ const MODS=[
 ["Packet Limiter","Rewrite","Meteor-style PacketLimiter rewritten: caps outgoing packets per tick (keep-alive and pong always allowed) so laggy modules can't get you kicked for flooding."],
 ["Path","Main","Draws a line from you to a target set with .mfpath. Doesn't work yet."],
 ["Pearl Phase","Main","Port of BlackOut's Auto Pearl: one-shot pearl at your own block to clip inside walls. Rotates, throws, restores your view and hotbar, then toggles off. Instant rotation and keep-rotation options."],
+["Placer","Main","Places whitelisted blocks everywhere around you - fills nearby air with the selected blocks from your inventory, nearest first. Radius, blocks-per-tick, silent rotation."],
 ["Sound Muter","Rewrite","Meteor's SoundBlocker rewritten: mutes specific sounds picked from a sound list, client-side."],
 ["Tab Complete Privacy","Rewrite","Meteor-style TabCompletePrivacy rewritten: cancels tab-complete packets that would leak private commands - block all, or block by prefixes, words or symbols."],
 ["Tab Logger","Rewrite","Meteor-style TabLogger rewritten: keeps a per-server history of every tab-list player (uuid, name, ping history) in a text file."],

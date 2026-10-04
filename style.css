@@ -55,6 +55,7 @@ h2{font:800 clamp(1.9rem,4vw,2.8rem)/1 var(--display);letter-spacing:-.02em}
 .mod p{font-size:.93rem;color:var(--muted);display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
 .mod[aria-expanded=true] p{-webkit-line-clamp:unset}
 .mod small{display:block;margin-top:10px;color:var(--leaf);font-size:.8rem}
+.cico{width:14px;height:14px;vertical-align:-2px;margin-right:6px}
 .empty{color:var(--muted);grid-column:1/-1}
 
 .cmds{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:10px}

@@ -61,10 +61,17 @@ const CMDS=[
 [".mfwaypoint","Add, list or clear waypoints."]
 ];
 const cats=["All","Main","Client Side","Combat","Rewrite"];
+// category icons (mini Minecraft-style SVGs: nether star, sign, end crystal, enchanted book)
+const ICONS={
+"Main":'<svg class="cico" viewBox="0 0 16 16" aria-hidden="true"><rect x="3" y="3" width="10" height="10" fill="#e8dcae" stroke="#6b5b3e" stroke-width=".7"/><rect x="3" y="3" width="10" height="10" fill="#e8dcae" stroke="#6b5b3e" stroke-width=".7" transform="rotate(45 8 8)"/><circle cx="8" cy="8" r="2.1" fill="#fff9e0"/></svg>',
+"Client Side":'<svg class="cico" viewBox="0 0 16 16" aria-hidden="true"><rect x="7.2" y="8.2" width="1.6" height="6.2" fill="#8a6a3d"/><rect x="2.5" y="2.8" width="11" height="5.6" rx=".8" fill="#c29955" stroke="#7a5c33" stroke-width=".8"/><rect x="4" y="4.2" width="8" height=".9" fill="#7a5c33"/><rect x="4" y="5.7" width="5.5" height=".9" fill="#7a5c33"/></svg>',
+"Combat":'<svg class="cico" viewBox="0 0 16 16" aria-hidden="true"><rect x="4.2" y="4.2" width="7.6" height="7.6" fill="#c05fd8" stroke="#7c2f9e" stroke-width=".7" transform="rotate(45 8 8)"/><rect x="5.9" y="5.9" width="4.2" height="4.2" fill="#8b2fc9" transform="rotate(45 8 8)"/><circle cx="8" cy="8" r="1.2" fill="#f5d9ff"/></svg>',
+"Rewrite":'<svg class="cico" viewBox="0 0 16 16" aria-hidden="true"><rect x="3.4" y="2.4" width="9.2" height="11.2" rx="1" fill="#7c3aad" stroke="#4e1f70" stroke-width=".7"/><rect x="3.4" y="2.4" width="2.3" height="11.2" rx="1" fill="#5d2b85"/><rect x="5.7" y="6.1" width="6.9" height="1.6" fill="#e9b64d"/><path d="M11.2 3.2l.4 1 1 .4-1 .4-.4 1-.4-1-1-.4 1-.4z" fill="#ffe9a8"/></svg>'
+};
 let cat="All";
 const $=s=>document.querySelector(s);
 const tabs=$("#tabs"),grid=$("#grid"),q=$("#q");
-cats.forEach(c=>{const b=document.createElement("button");b.className="tab";b.role="tab";b.textContent=c;
+cats.forEach(c=>{const b=document.createElement("button");b.className="tab";b.role="tab";b.innerHTML=(ICONS[c]||"")+c;
   b.onclick=()=>{cat=c;render()};tabs.append(b)});
 function render(){
   [...tabs.children].forEach(b=>b.setAttribute("aria-selected",b.textContent===cat));
@@ -75,7 +82,7 @@ function render(){
   list.forEach(m=>{const e=document.createElement("button");e.className="mod";e.setAttribute("aria-expanded","false");
     const h=document.createElement("h3");h.textContent=m[0];
     const p=document.createElement("p");p.textContent=m[2];
-    const s=document.createElement("small");s.textContent=m[1];
+    const s=document.createElement("small");s.innerHTML=(ICONS[m[1]]||"")+m[1];
     e.append(h,p,s);
     e.onclick=()=>e.setAttribute("aria-expanded",e.getAttribute("aria-expanded")==="false");
     grid.append(e)});

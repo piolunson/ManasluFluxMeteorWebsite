@@ -12,7 +12,7 @@ const MODS=[
 ["Clicker","Rewrite","Meteor-style Clicker rewritten: left/right auto clicker with Nothing, Hold and Click modes and per-action tick delays."],
 ["Death Coords","Main","Prints (and optionally copies) your coordinates the moment you die."],
 ["Death Commands","Rewrite","Meteor-style DeathCommands rewritten: sends a random message or command when you die, with delay range and chance settings."],
-["Elytra Flight","Main","Controlled elytra flight without fireworks, with horizontal and vertical speed."],
+["Elytra Flight","Main","Controlled elytra flight without fireworks, with horizontal and vertical speed. Toggleable auto-forward: off = thrust only while holding the forward key."],
 ["Instant TNT","Main","Ignites TNT just by looking at it, using a silent switch to flint & steel or fire charge. Click Through Walls ignites TNT behind walls and around corners."],
 ["Mute","Main","Hides chat messages from muted players or containing muted phrases (client-side)."],
 ["Packet Limiter","Rewrite","Meteor-style PacketLimiter rewritten: caps outgoing packets per tick (keep-alive and pong always allowed) so laggy modules can't get you kicked for flooding."],

@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>ManasluFlux — Meteor Client addon for Minecraft 26.2</title>    <meta name="description" content="37 modules across four categories, 24 commands and 4 HUD elements for Meteor Client on Fabric.">
+<title>ManasluFlux — Meteor Client addon for Minecraft 26.2</title>    <meta name="description" content="38 modules across four categories, 24 commands and 4 HUD elements for Meteor Client on Fabric.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
@@ -28,16 +28,16 @@
 
 <main id="top">
   <section class="hero">
-    <p class="chip">v0.4.1 · Minecraft 26.2 · Fabric · Meteor Client</p>
+    <p class="chip">v0.4.2 · Minecraft 26.2 · Fabric · Meteor Client</p>
     <h1 id="title" aria-label="ManasluFlux"><em>Manaslu</em><span>Flux</span></h1>
     <p class="lead">A Meteor Client addon with flight, silent combat, client-side tricks and a handful of tools you'll actually keep enabled.</p>
     <div class="cta">
-      <a class="btn shine" href="#download">Download v0.4.1</a>
+      <a class="btn shine" href="#download">Download v0.4.2</a>
       <a class="btn ghost" href="#modules">Browse the modules</a>
       <a class="btn ghost" href="https://github.com/piolunson/manasluflux" target="_blank" rel="noopener">GitHub</a>
     </div>
     <ul class="stats">
-      <li><b data-count="37">0</b> modules</li>
+      <li><b data-count="38">0</b> modules</li>
       <li><b data-count="24">0</b> commands</li>
       <li><b data-count="4">0</b> HUD elements</li>
     </ul>
@@ -70,22 +70,22 @@
   <section id="history" class="panel">
     <div class="head"><h2>Changelog</h2></div>
     <ol class="log">
+      <li><b>0.4.2</b><span>New module “Crystal Optimizer” (Client Side): renders every end crystal as a single static box instead of the full animated model - or hides them entirely. Big FPS boost with many crystals, purely client-side.</span></li>
       <li><b>0.4.1</b><span>Instant TNT gained a bow last resort: with no igniter and no redstone block, it silently draws a bow and shoots the TNT - Flame bow (or creative mode) + an arrow required, since flaming arrows ignite TNT on contact.</span></li>
       <li><b>0.4.0</b><span>Instant TNT's redstone-block ignition now mines the redstone block straight back: a silent pickaxe swap and packet mining during the fuse put the dust back in your inventory before the TNT blows.</span></li>
       <li><b>0.3.16</b><span>New command “.mfkill” with a confirm step — instant kill in singleplayer, /suicide on servers. Instant TNT now falls back to placing a redstone block next to the TNT when you have no flint &amp; steel or fire charge.</span></li>
-      <li><b>0.3.15</b><span>New module “Ping Spoofer” with three modes: Real (no change), More (actually adds latency by delaying replies, with jitter) and Spoof (replies instant, only the tab-list ping is faked).</span></li>
     </ol>
   </section>
 
   <section id="download" class="panel dl">
     <h2>Get the jar</h2>
-    <p class="sub">Drop <code>manasluflux-0.4.1.jar</code> into your <code>mods</code> folder next to Meteor Client — Baritone is already inside.</p>
-    <a class="btn shine" href="downloads/manasluflux-0.4.1.jar" download id="dlbtn">manasluflux-0.4.1.jar</a>
+    <p class="sub">Drop <code>manasluflux-0.4.2.jar</code> into your <code>mods</code> folder next to Meteor Client — Baritone is already inside.</p>
+    <a class="btn shine" href="downloads/manasluflux-0.4.2.jar" download id="dlbtn">manasluflux-0.4.2.jar</a>
     <p class="fine">Requires Minecraft 26.2, Fabric Loader and Meteor Client.</p>
   </section>
 </main>
 
 <footer>Made by piolunson · ManasluFlux</footer>
-<script src="script.js?v=5"></script>
+<script src="script.js?v=6"></script>
 </body>
 </html>

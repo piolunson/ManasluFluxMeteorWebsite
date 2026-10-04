@@ -30,6 +30,7 @@ const MODS=[
 ["Add Text","Client Side","Local-only chat lines added with .mfaddtext, optionally kept across relogs."],
 ["Auto Login","Client Side","Sends /login <password> (both configurable) automatically after joining a server, or when chat shows a trigger word like \"register\". Supports delays, cooldowns and repeats."],
 ["Client-Side Night Vision","Client Side","Night vision that only exists on your client. The server never sees the effect."],
+["Crystal Optimizer","Client Side","Renders every end crystal as a single static box instead of the full animated model - or hides them entirely. Big FPS boost with many crystals, purely client-side."],
 ["Toggle Tab","Client Side","Keeps the player list open by making the game think you're holding Tab."],
 ["Universal Colored Chat","Client Side","Replaces every & in chat with the color code sign."],
 ["Auto Totem","Combat","Instantly refills a totem of undying into your offhand when it's used or pops."],

@@ -3,6 +3,7 @@ const MODS=[
 ["Auto Fish","Main","Throws the rod, reels in fish, looks up and recasts."],
 ["Auto Log","Main","Disconnects when your health drops below a threshold."],
 ["Auto Map Part","Main","When you place an item frame, it automatically fills it with a randomly chosen filled map from your hotbar - map-art made instant, same tick you place the frame (delay configurable 0-20 ticks). Silent server-side swap keeps your visible hotbar unchanged."],
+["Auto Wither","Main","Projects the vanilla wither skeleton at your aim spot, then places it piece by piece (6 soul sand + 3 wither skulls) and automatically nametags the spawned wither. Block, layer, nametag and rearm delays all configurable, 0 = instant. Creative mode writes your custom name on the tag."],
 ["Auto Respawn","Rewrite","Meteor's AutoRespawn rewritten: auto-clicks respawn on the death screen, then optionally runs commands or chat lines, one per tick."],
 ["Auto Responder","Rewrite","Meteor's AutoResponder rewritten: replies to chat automatically via trigger=response pairs, with an anti-loop cooldown."],
 ["Auto Walk Hold","Main","Holds a key (default 2) down, even after screens open or the window loses focus."],

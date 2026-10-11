@@ -2,6 +2,7 @@ const MODS=[
 ["Auto Eat","Main","Automatically eats food from your hotbar when hungry."],
 ["Auto Fish","Main","Throws the rod, reels in fish, looks up and recasts."],
 ["Auto Log","Main","Disconnects when your health drops below a threshold."],
+["Auto Map Part","Main","When you place an item frame, it automatically fills it with a randomly chosen filled map from your hotbar - map-art made instant. Silent server-side swap keeps your visible hotbar unchanged."],
 ["Auto Respawn","Rewrite","Meteor's AutoRespawn rewritten: auto-clicks respawn on the death screen, then optionally runs commands or chat lines, one per tick."],
 ["Auto Responder","Rewrite","Meteor's AutoResponder rewritten: replies to chat automatically via trigger=response pairs, with an anti-loop cooldown."],
 ["Auto Walk Hold","Main","Holds a key (default 2) down, even after screens open or the window loses focus."],
@@ -90,8 +91,7 @@ function render(){
     e.append(h,p,s);
     e.onclick=()=>e.setAttribute("aria-expanded",e.getAttribute("aria-expanded")==="false");
     grid.append(e)});
-}
-q.oninput=()=>render();render();
+}  q.oninput=()=>render();render();
 
 const cm=$("#cmds");
 CMDS.forEach(([c,d])=>{const b=document.createElement("button");b.className="cmd";

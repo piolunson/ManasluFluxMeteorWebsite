@@ -3,7 +3,7 @@ const MODS=[
 ["Auto Fish","Main","Throws the rod, reels in fish, looks up and recasts."],
 ["Auto Log","Main","Disconnects when your health drops below a threshold."],
 ["Auto Map Part","Main","When you place an item frame, it automatically fills it with a randomly chosen filled map from your hotbar - map-art made instant, same tick you place the frame (delay configurable 0-20 ticks). Silent server-side swap keeps your visible hotbar unchanged."],
-["Auto Wither","Main","Aim anywhere and right-click to build a full wither (Trouser-Streak port): 2 soul sand columns + 3 skulls, air place, rotation lock, optional center skull, and the spawned wither gets automatically nametagged. Every block delay configurable, 0 = instant."],
+["Auto Wither","Main","Aim anywhere and right-click to build a full wither (Trouser-Streak port): 2 soul sand columns + 3 skulls, air place, rotation lock, optional center skull, and the spawned wither gets automatically nametagged. Range setting controls how far away you can build; every block delay configurable, 0 = instant."],
 ["Auto Respawn","Rewrite","Meteor's AutoRespawn rewritten: auto-clicks respawn on the death screen, then optionally runs commands or chat lines, one per tick."],
 ["Auto Responder","Rewrite","Meteor's AutoResponder rewritten: replies to chat automatically via trigger=response pairs, with an anti-loop cooldown."],
 ["Auto Walk Hold","Main","Holds a key (default 2) down, even after screens open or the window loses focus."],

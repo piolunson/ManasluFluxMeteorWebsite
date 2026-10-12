@@ -9,6 +9,7 @@ const MODS=[
 ["Auto Walk Hold","Main","Holds a key (default 2) down, even after screens open or the window loses focus."],
 ["Block Replacer","Main","Places the same block back when one of your placed blocks gets mined or removed."],
 ["Boat Flight","Main","Fly while riding a boat. Horizontal and vertical speed settings; jump goes up, sneak goes down."],
+["Auto Chat Clear","Rewrite","Automatically does the vanilla F3+D chat clear after every N received messages. Keeps the visible backlog empty on busy servers without manual keypresses - scrollback history stays (optional wipe), purely client-side."],
 ["Chat Logger","Rewrite","Meteor-style ChatLogger rewritten: logs incoming and outgoing chat including commands to a file, fresh log per game join, custom path format."],
 ["Click TP","Rewrite","Meteor's ClickTP rewritten: hold use while looking at a block to teleport there in configurable steps, with max distance, safe-landing check and delay."],
 ["Clicker","Rewrite","Meteor-style Clicker rewritten: left/right auto clicker with Nothing, Hold and Click modes and per-action tick delays."],

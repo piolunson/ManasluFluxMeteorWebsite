@@ -35,6 +35,7 @@ const MODS=[
 ["Client-Side Night Vision","Client Side","Night vision that only exists on your client. The server never sees the effect."],
 ["Crystal Optimizer","Client Side","Renders every end crystal as a single static box instead of the full animated model - or hides them entirely. Big FPS boost with many crystals, purely client-side."],
 ["Client Block Entities","Client Side","Pick any block entity types (chests, signs, beacons, spawners...) and their rendering becomes client-side only - replaced by a static box or hidden entirely, like Crystal Optimizer but for everything. The block itself still renders normally."],
+["Anti Drop Lagback","Client Side","Counts rubberband corrections (server position syncs that snap you back) inside a sliding time window; passing the cap pauses every other active module for a set amount of ticks so the cause stops, then resumes them. Chat notifier included, purely client-side."],
 ["Toggle Tab","Client Side","Keeps the player list open by making the game think you're holding Tab."],
 ["Universal Colored Chat","Client Side","Replaces every & in chat with the color code sign."],
 ["Auto Totem","Combat","Instantly refills a totem of undying into your offhand when it's used or pops."],

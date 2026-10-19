@@ -7,7 +7,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=2">
+<link rel="stylesheet" href="style.css?v=3">
 </head>
 <body>
 <div class="progress" aria-hidden="true"></div>
@@ -28,11 +28,11 @@
 
 <main id="top">
   <section class="hero">
-    <p class="chip">v0.5.3 · Minecraft 26.2 · Fabric · Meteor Client</p>
+    <p class="chip">v0.6.0 · Minecraft 1.21.11 · Fabric · Meteor Client</p>
     <h1 id="title" aria-label="ManasluFlux"><em>Manaslu</em><span>Flux</span></h1>
     <p class="lead">A Meteor Client addon with flight, silent combat, client-side tricks and a handful of tools you'll actually keep enabled.</p>
     <div class="cta">
-      <a class="btn shine" href="#download">Download v0.5.3</a>
+      <a class="btn shine" href="#download">Download v0.6.0</a>
       <a class="btn ghost" href="#modules">Browse the modules</a>
       <a class="btn ghost" href="https://github.com/piolunson/manasluflux" target="_blank" rel="noopener">GitHub</a>
     </div>
@@ -73,6 +73,7 @@
   <section id="history" class="panel">
     <div class="head"><h2>Changelog</h2></div>
     <ol class="log">
+      <li><b>0.6.0</b><span>Full port to Minecraft 1.21.11 + Meteor Client 1.21.11: every module, command, HUD element and both mixins re-mapped to the new API, the bundled Baritone swapped to the 1.21.11 Fabric build, and the Image/GIF HUD elements rewritten onto the new blaze3d texture path (async decoding). Nothing added or removed — this is the compatibility release.</span></li>
       <li><b>0.5.3</b><span>New Anti Drop Lagback module: counts rubberband corrections (server position syncs that snap you back) inside a time window, and when the cap is passed it pauses every other active module for a set amount of ticks so the cause stops — then resumes them. Chat notifier included.</span></li>
       <li><b>0.5.2</b><span>Crash fix: the Client Block Entities mixin declared a wrong parameter type, so the mixin failed at startup and crashed the game on launch (0.5.0/0.5.1). Now uses the exact descriptor and the game boots fine.</span></li>
       <li><b>0.5.1</b><span>New Auto Chat Clear module: automatically does the vanilla F3+D chat clear after every N received messages - keeps the backlogged chat empty on busy servers without manual keypresses. Scrollback history stays (optional wipe), nothing is sent to the server.</span></li>
@@ -88,13 +89,13 @@
 
   <section id="download" class="panel dl">
     <h2>Get the jar</h2>
-    <p class="sub">Drop <code>manasluflux-0.5.3.jar</code> into your <code>mods</code> folder next to Meteor Client — Baritone is already inside.</p>
-    <a class="btn shine" href="downloads/manasluflux-0.5.3.jar" download id="dlbtn">manasluflux-0.5.3.jar</a>
+    <p class="sub">Drop <code>manasluflux-0.6.0.jar</code> into your <code>mods</code> folder next to Meteor Client — Baritone is already inside.</p>
+    <a class="btn shine" href="downloads/manasluflux-0.6.0.jar" download id="dlbtn">manasluflux-0.6.0.jar</a>
     <p class="fine">Requires Minecraft 26.2, Fabric Loader and Meteor Client.</p>
   </section>
 </main>
 
 <footer>Made by piolunson · ManasluFlux</footer>
-<script src="script.js?v=18"></script>
+<script src="script.js?v=19"></script>
 </body>
 </html>

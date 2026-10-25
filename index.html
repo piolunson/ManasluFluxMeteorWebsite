@@ -28,11 +28,11 @@
 
 <main id="top">
   <section class="hero">
-    <p class="chip">v0.8.0 · Minecraft 1.21.11 · Fabric · Meteor Client</p>
+    <p class="chip">v0.8.1 · Minecraft 1.21.11 · Fabric · Meteor Client</p>
     <h1 id="title" aria-label="ManasluFlux"><em>Manaslu</em><span>Flux</span></h1>
     <p class="lead">A Meteor Client addon with flight, silent combat, client-side tricks and a handful of tools you'll actually keep enabled.</p>
     <div class="cta">
-      <a class="btn shine" href="#download">Download v0.8.0</a>
+      <a class="btn shine" href="#download">Download v0.8.1</a>
       <a class="btn ghost" href="#modules">Browse the modules</a>
       <a class="btn ghost" href="https://github.com/piolunson/manasluflux" target="_blank" rel="noopener">GitHub</a>
     </div>
@@ -73,6 +73,7 @@
   <section id="history" class="panel">
     <div class="head"><h2>Changelog</h2></div>
     <ol class="log">
+<li><b>0.8.1</b><span>Every numeric setting now goes from <b>0 to 10000</b> — all 69 int and double settings across every module and HUD element, sliders included. A few internals are clamped so a dialled-up value can't freeze the game: the place/fill/through-walls block scans stop at 8 blocks radius (your range value still applies), the Discord RPC update interval is guarded against 0, and Auto Fish's look-up pitch is now a plain 0–10000 angle.</span></li>
 <li><b>0.8.0</b><span>Packet level for <b>Crystal Aura</b> and <b>Auto Totem</b>: both modules get a new Packet group. Packet level sends the interactions as raw packets and reads the server's answer from the packet stream instead of waiting for game ticks — Crystal Aura sends its own use-block/attack packets and pops a crystal the instant its spawn packet arrives, Auto Totem sends the two inventory click packets of the offhand swap itself (same millisecond, no inventory sync wait) and refills the moment the totem-pop packet lands. Both have packet retries (resend until the server visibly reacts) and a max-packets-per-second cap.</span></li>
 <li><b>0.7.0</b><span>New module: <b>Discord RPC</b> — fully customizable Rich Presence. One-click presets (Crystals, PvP, Mining, Exploring, Building, AFK), editable Line 1 / Line 2 with placeholders ({player}, {server}, {ping}, {pos}, {dimension}, {server}, {cps}, {version}, {health}), large image name &amp; text, optional small image, elapsed-time timer, update interval, and a built-in <b>crystals-per-second</b> counter. Set your own Discord Application ID to change the name shown by Discord and use your own images (default: Meteor's app).</span></li>
       <li><b>0.6.0</b><span>Full port to Minecraft 1.21.11 + Meteor Client 1.21.11: every module, command, HUD element and both mixins re-mapped to the new API, the bundled Baritone swapped to the 1.21.11 Fabric build, and the Image/GIF HUD elements rewritten onto the new blaze3d texture path (async decoding). Nothing added or removed — this is the compatibility release.</span></li>
@@ -91,13 +92,13 @@
 
   <section id="download" class="panel dl">
     <h2>Get the jar</h2>
-    <p class="sub">Drop <code>manasluflux-0.8.0.jar</code> into your <code>mods</code> folder next to Meteor Client — Baritone is already inside.</p>
-    <a class="btn shine" href="downloads/manasluflux-0.8.0.jar" download id="dlbtn">manasluflux-0.8.0.jar</a>
+    <p class="sub">Drop <code>manasluflux-0.8.1.jar</code> into your <code>mods</code> folder next to Meteor Client — Baritone is already inside.</p>
+    <a class="btn shine" href="downloads/manasluflux-0.8.1.jar" download id="dlbtn">manasluflux-0.8.1.jar</a>
     <p class="fine">Requires Minecraft 1.21.11, Fabric Loader and Meteor Client.</p>
   </section>
 </main>
 
 <footer>Made by piolunson · ManasluFlux</footer>
-<script src="script.js?v=23"></script>
+<script src="script.js?v=24"></script>
 </body>
 </html>

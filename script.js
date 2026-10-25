@@ -58,6 +58,7 @@ const CMDS=[
 [".mfenchant","Toggle a fake enchant glow on the held item (visual only)."],
 [".mffps","Current client FPS."],
 [".mfhelp","Discord RPC tutorial: prints every {} placeholder with a live value ({player}, {server}, {ping}, {pos}, {dimension}, {cps}, {version}, {health}), example lines to paste into the module, and how the name / logo / images work."],
+[".mffakeplayer add [name] | remove | clear | list | tp | health <hp>","Spawns a fake player the client treats as a real player: own tab-list entry and registered in world.getPlayers(), so auras and player-only features target it. Spawns where you look and copies your inventory."],
 [".mfheal","Food and health you're missing (client-side info)."],
 [".mfjavascript [question]","Asks a yes/no question. YES crashes the game (real crash report), NO rains confetti for a few seconds."],
 [".mfkill confirm","Kills your own player. Instant in singleplayer; on servers it sends /suicide."],

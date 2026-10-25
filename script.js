@@ -16,7 +16,7 @@ const MODS=[
 ["Death Coords","Main","Prints (and optionally copies) your coordinates the moment you die."],
 ["Death Commands","Rewrite","Meteor-style DeathCommands rewritten: sends a random message or command when you die, with delay range and chance settings."],
 
-["Discord RPC","Main","Fully customizable Discord Rich Presence: presets (Crystals, PvP, Mining, Exploring, Building, AFK), editable Line 1 / Line 2 with placeholders ({player}, {server}, {ping}, {pos}, {dimension}, {cps}, {version}, {health}), big image name & text, optional small image, timer, and a built-in crystals-per-second counter. Set your own Discord Application ID to change the name shown by Discord and use your own images."],
+["Discord RPC","Main","Fully customizable Discord Rich Presence: editable Line 1 / Line 2 with placeholders ({player}, {server}, {ping}, {pos}, {dimension}, {cps}, {version}, {health}), big image name & text, optional small image, timer, and a built-in crystals-per-second counter. .mfhelp prints the whole placeholder tutorial in chat. Set your own Discord Application ID to change the name shown by Discord and use your own images."],
 ["Elytra Flight","Main","Controlled elytra flight without fireworks, with horizontal and vertical speed. Toggleable auto-forward: off = thrust only while holding the forward key."],
 ["Instant TNT","Main","Ignites TNT just by looking at it, using a silent switch to flint & steel or fire charge. Click Through Walls ignites TNT behind walls and around corners. Falls back to placing a redstone block next to the TNT when you have no igniter (mined straight back during the fuse), and last of all shoots the TNT with a Flame bow."],
 ["Mute","Main","Hides chat messages from muted players or containing muted phrases (client-side)."],
@@ -40,8 +40,8 @@ const MODS=[
 ["Anti Drop Lagback","Client Side","Counts rubberband corrections (server position syncs that snap you back) inside a sliding time window; passing the cap pauses every other active module for a set amount of ticks so the cause stops, then resumes them. Chat notifier included, purely client-side."],
 ["Toggle Tab","Client Side","Keeps the player list open by making the game think you're holding Tab."],
 ["Universal Colored Chat","Client Side","Replaces every & in chat with the color code sign."],
-["Auto Totem","Combat","Instantly refills a totem of undying into your offhand when it's used or pops."],
-["Crystal Aura","Combat","Port of Meteor's CrystalAura: simulates crystal damage for every base and pops the best one. Face place, support blocks, max self damage. Silent."],
+["Auto Totem","Combat","Instantly refills a totem of undying into your offhand when it's used or pops. Packet level: refills through raw inventory click packets and reacts to the pop packet the same millisecond, with packet retries and a max-packets-per-second cap."],
+["Crystal Aura","Combat","Port of Meteor's CrystalAura: simulates crystal damage for every base and pops the best one. Face place, support blocks, max self damage. Silent. Packet level sends the place/break packets itself and reads crystal spawn/destroy from the packet stream, so crystals pop without waiting for a game tick - with packet retries and a max-packets-per-second cap."],
 ["Silent Aura","Combat","Attacks the nearest player without rotating or swinging your visible hand. Silent aim (body or head) plus a silent weapon switch. Pause while mining or eating."],
 ["TNT Placer","Combat","Traps the nearest player in (crying) obsidian, buries them in TNT and ignites it, non-stop."]
 ];

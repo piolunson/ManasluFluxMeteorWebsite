@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>ManasluFlux — Meteor Client addon for Minecraft 1.21.11</title>    <meta name="description" content="43 modules across four categories, 24 commands and 7 HUD elements for Meteor Client on Fabric.">
+<title>ManasluFlux — Meteor Client addon for Minecraft 1.21.11</title>    <meta name="description" content="44 modules across four categories, 24 commands and 7 HUD elements for Meteor Client on Fabric.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
@@ -28,11 +28,11 @@
 
 <main id="top">
   <section class="hero">
-    <p class="chip">v0.6.0 · Minecraft 1.21.11 · Fabric · Meteor Client</p>
+    <p class="chip">v0.7.0 · Minecraft 1.21.11 · Fabric · Meteor Client</p>
     <h1 id="title" aria-label="ManasluFlux"><em>Manaslu</em><span>Flux</span></h1>
     <p class="lead">A Meteor Client addon with flight, silent combat, client-side tricks and a handful of tools you'll actually keep enabled.</p>
     <div class="cta">
-      <a class="btn shine" href="#download">Download v0.6.0</a>
+      <a class="btn shine" href="#download">Download v0.7.0</a>
       <a class="btn ghost" href="#modules">Browse the modules</a>
       <a class="btn ghost" href="https://github.com/piolunson/manasluflux" target="_blank" rel="noopener">GitHub</a>
     </div>
@@ -73,6 +73,7 @@
   <section id="history" class="panel">
     <div class="head"><h2>Changelog</h2></div>
     <ol class="log">
+<li><b>0.7.0</b><span>New module: <b>Discord RPC</b> — fully customizable Rich Presence. One-click presets (Crystals, PvP, Mining, Exploring, Building, AFK), editable Line 1 / Line 2 with placeholders ({player}, {server}, {ping}, {pos}, {dimension}, {server}, {cps}, {version}, {health}), large image name &amp; text, optional small image, elapsed-time timer, update interval, and a built-in <b>crystals-per-second</b> counter. Set your own Discord Application ID to change the name shown by Discord and use your own images (default: Meteor's app).</span></li>
       <li><b>0.6.0</b><span>Full port to Minecraft 1.21.11 + Meteor Client 1.21.11: every module, command, HUD element and both mixins re-mapped to the new API, the bundled Baritone swapped to the 1.21.11 Fabric build, and the Image/GIF HUD elements rewritten onto the new blaze3d texture path (async decoding). Nothing added or removed — this is the compatibility release.</span></li>
       <li><b>0.5.3</b><span>New Anti Drop Lagback module: counts rubberband corrections (server position syncs that snap you back) inside a time window, and when the cap is passed it pauses every other active module for a set amount of ticks so the cause stops — then resumes them. Chat notifier included.</span></li>
       <li><b>0.5.2</b><span>Crash fix: the Client Block Entities mixin declared a wrong parameter type, so the mixin failed at startup and crashed the game on launch (0.5.0/0.5.1). Now uses the exact descriptor and the game boots fine.</span></li>
@@ -89,13 +90,13 @@
 
   <section id="download" class="panel dl">
     <h2>Get the jar</h2>
-    <p class="sub">Drop <code>manasluflux-0.6.0.jar</code> into your <code>mods</code> folder next to Meteor Client — Baritone is already inside.</p>
-    <a class="btn shine" href="downloads/manasluflux-0.6.0.jar" download id="dlbtn">manasluflux-0.6.0.jar</a>
+    <p class="sub">Drop <code>manasluflux-0.7.0.jar</code> into your <code>mods</code> folder next to Meteor Client — Baritone is already inside.</p>
+    <a class="btn shine" href="downloads/manasluflux-0.7.0.jar" download id="dlbtn">manasluflux-0.7.0.jar</a>
     <p class="fine">Requires Minecraft 1.21.11, Fabric Loader and Meteor Client.</p>
   </section>
 </main>
 
 <footer>Made by piolunson · ManasluFlux</footer>
-<script src="script.js?v=19"></script>
+<script src="script.js?v=20"></script>
 </body>
 </html>

@@ -15,6 +15,8 @@ const MODS=[
 ["Clicker","Rewrite","Meteor-style Clicker rewritten: left/right auto clicker with Nothing, Hold and Click modes and per-action tick delays."],
 ["Death Coords","Main","Prints (and optionally copies) your coordinates the moment you die."],
 ["Death Commands","Rewrite","Meteor-style DeathCommands rewritten: sends a random message or command when you die, with delay range and chance settings."],
+
+["Discord RPC","Main","Fully customizable Discord Rich Presence: presets (Crystals, PvP, Mining, Exploring, Building, AFK), editable Line 1 / Line 2 with placeholders ({player}, {server}, {ping}, {pos}, {dimension}, {cps}, {version}, {health}), big image name & text, optional small image, timer, and a built-in crystals-per-second counter. Set your own Discord Application ID to change the name shown by Discord and use your own images."],
 ["Elytra Flight","Main","Controlled elytra flight without fireworks, with horizontal and vertical speed. Toggleable auto-forward: off = thrust only while holding the forward key."],
 ["Instant TNT","Main","Ignites TNT just by looking at it, using a silent switch to flint & steel or fire charge. Click Through Walls ignites TNT behind walls and around corners. Falls back to placing a redstone block next to the TNT when you have no igniter (mined straight back during the fuse), and last of all shoots the TNT with a Flame bow."],
 ["Mute","Main","Hides chat messages from muted players or containing muted phrases (client-side)."],

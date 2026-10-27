@@ -3,61 +3,72 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>ManasluFlux — Meteor Client addon for Minecraft 1.21.11</title>    <meta name="description" content="44 modules across four categories, 25 commands and 7 HUD elements for Meteor Client on Fabric.">
+<meta name="theme-color" content="#0a0a0a">
+<title>ManasluFlux — Meteor Client addon for Minecraft 1.21.11</title>
+<meta name="description" content="45 modules across six categories, 26 commands and 7 HUD elements for Meteor Client on Fabric, for Minecraft 1.21.11.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=3">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css?v=4">
 </head>
 <body>
 <div class="progress" aria-hidden="true"></div>
 <div class="bg" aria-hidden="true"></div>
-<div class="glow" aria-hidden="true"></div>
-<canvas id="petals" aria-hidden="true"></canvas>
+<canvas class="petals" id="petals" aria-hidden="true"></canvas>
 
-<header class="nav">
-  <a class="brand" href="#top">ManasluFlux</a>
-  <nav>
-    <a href="#modules">Modules</a>
-    <a href="#commands">Commands</a>
-    <a href="#hud">HUD</a>
-    <a href="#history">Changelog</a>
-    <a class="btn small" href="#download">Download</a>
+<header class="menu" id="menu">
+  <a class="brand" href="#top">MANASLU<em>FLUX</em></a>
+  <nav aria-label="Sections">
+    <a class="lnk" href="#modules">Modules</a>
+    <a class="lnk" href="#commands">Commands</a>
+    <a class="lnk" href="#hud">HUD</a>
+    <a class="lnk" href="#history">Changelog</a>
+    <a class="btn" href="#download">Download</a>
   </nav>
 </header>
 
 <main id="top">
   <section class="hero">
-    <p class="chip">v0.10.1 · Minecraft 1.21.11 · Fabric · Meteor Client</p>
-    <h1 id="title" aria-label="ManasluFlux"><em>Manaslu</em><span>Flux</span></h1>
+    <p class="chip"><i aria-hidden="true"></i>v0.10.1 · Minecraft 1.21.11 · Fabric · Meteor Client</p>
+    <h1 id="title" aria-label="ManasluFlux"><span>Manaslu</span><span class="alt">Flux</span></h1>
     <p class="lead">A Meteor Client addon with flight, silent combat, client-side tricks and a handful of tools you'll actually keep enabled.</p>
     <div class="cta">
-      <a class="btn shine" href="#download">Download v0.10.1</a>
+      <a class="btn prime" href="#download">Download v0.10.1</a>
       <a class="btn ghost" href="#modules">Browse the modules</a>
       <a class="btn ghost" href="https://github.com/piolunson/manasluflux" target="_blank" rel="noopener">GitHub</a>
     </div>
     <ul class="stats">
-      <li><b data-count="45">0</b> modules</li>
-      <li><b data-count="26">0</b> commands</li>
-      <li><b data-count="7">0</b> HUD elements</li>
+      <li><b data-count="45">0</b><span>Modules</span></li>
+      <li><b data-count="26">0</b><span>Commands</span></li>
+      <li><b data-count="7">0</b><span>HUD elements</span></li>
     </ul>
   </section>
 
-  <section id="modules" class="panel">
+  <section id="modules" class="panel reveal">
     <div class="head">
-      <h2>Modules</h2>
-      <input id="q" type="search" placeholder="Search modules…" aria-label="Search modules">
+      <div>
+        <h2>Modules</h2>
+        <p class="sub" id="modcount" aria-live="polite">45 / 45 shown</p>
+      </div>
+      <div class="find">
+        <input id="q" type="search" placeholder="Search modules" aria-label="Search modules">
+      </div>
     </div>
-    <div class="tabs" id="tabs" role="tablist"></div>
+    <div class="tabs" id="tabs" role="tablist" aria-label="Module categories"></div>
     <div class="grid" id="grid"></div>
   </section>
 
-  <section id="commands" class="panel">
-    <div class="head"><h2>Commands</h2><p class="sub">Type them in Meteor's command prompt. Click one to copy it.</p></div>
+  <section id="commands" class="panel reveal">
+    <div class="head">
+      <div>
+        <h2>Commands</h2>
+        <p class="sub">Type them in Meteor's command prompt. Click one to copy it.</p>
+      </div>
+    </div>
     <div class="cmds" id="cmds"></div>
   </section>
 
-  <section id="hud" class="panel">
+  <section id="hud" class="panel reveal">
     <div class="head"><h2>HUD elements</h2><p class="sub">Add them from the HUD editor, in the “Manaslu Flux” group.</p></div>
     <div class="hudrow">
       <article><h3>Image</h3><p>Shows a png, jpg, bmp or the first frame of a gif, from an absolute path or relative to <code>.minecraft</code>. Scale, opacity and smooth/nearest filtering.</p></article>
@@ -70,10 +81,10 @@
     </div>
   </section>
 
-  <section id="history" class="panel">
+  <section id="history" class="panel reveal">
     <div class="head"><h2>Changelog</h2></div>
     <ol class="log">
-<li><b>0.10.1</b><span><b>AC PacketFlood</b> no longer waits for the game tick: place/break packets are fired by a continuous 1 ms loop, so <code>place-delay-ms 1</code> is roughly 1000 packets per second per action and <code>0</code> bursts until <code>max-packets-per-second</code> is hit. Plans are still rebuilt each tick on the game thread; batches go out whole and the loop survives exceptions.</span></li>
+<li class="now"><b>0.10.1</b><span><b>AC PacketFlood</b> no longer waits for the game tick: place/break packets are fired by a continuous 1 ms loop, so <code>place-delay-ms 1</code> is roughly 1000 packets per second per action and <code>0</code> bursts until <code>max-packets-per-second</code> is hit. Plans are still rebuilt each tick on the game thread; batches go out whole and the loop survives exceptions.</span></li>
 <li><b>0.10.0</b><span>New command <b>.mffakeplayer</b> — a fake player the client really believes is a player, unlike Meteor's .fake-player: it gets its own player-list entry (tab list, nametags, skins) and is registered in <code>world.getPlayers()</code> like a joining player, so auras, target finding and anything else that only reacts to real players picks it up. <code>add [name]</code>, <code>remove</code>, <code>clear</code>, <code>list</code>, <code>tp</code>, <code>health &lt;hp&gt;</code>; it spawns where you look and copies your inventory so armor counts in damage.</span></li>
 <li><b>0.9.0</b><span>New module <b>AC PacketFlood</b> (`ac-pcktflood`): a crystal aura on the packet timeline — every place and break is a raw packet fired by a millisecond scheduler, with a packet delay in ms (default 1), per-action retries and retry delay (so the timeline reads 1ms:packet 3ms:retry 5ms:retry … 6ms:packet), bases-per-tick, all the usual aura settings and a max-packets-per-second cap. Retries stop the instant the server confirms with a spawn/destroy packet. <b>Modules re-categorised</b>: the old "Main" and "Rewrite" buckets are gone — Combat (8), Movement (5), Player (6), World (4), Client Side (9), Utility (13), each with its own tab icon.</span></li>
 <li><b>0.8.1</b><span>Every numeric setting now goes from <b>0 to 10000</b> — all 69 int and double settings across every module and HUD element, sliders included. A few internals are clamped so a dialled-up value can't freeze the game: the place/fill/through-walls block scans stop at 8 blocks radius (your range value still applies), the Discord RPC update interval is guarded against 0, and Auto Fish's look-up pitch is now a plain 0–10000 angle.</span></li>
@@ -87,21 +98,21 @@
       <li><b>0.4.10</b><span>Crash fix: opening the Meteor GUI in the main menu no longer crashes ("Components not bound yet" - category icons now use the same pre-bound item construction Meteor itself uses).</span></li>
       <li><b>0.4.9</b><span>Two new top-bar tabs in the Meteor GUI: Notepad (multiple free-text note pages) and To Do (checkbox task list with a n/m-done counter). Both save to disk and survive restarts.</span></li>
       <li><b>0.4.8</b><span>Three new HUD elements: Server Info (server/address + live ping), Session Info (in-game day, clock, weather, biome) and Kill Counter (session kills/deaths/K-D). HUD count 4 → 7.</span></li>
-
-
-
     </ol>
   </section>
 
-  <section id="download" class="panel dl">
+  <section id="download" class="panel reveal dl">
     <h2>Get the jar</h2>
     <p class="sub">Drop <code>manasluflux-0.10.1.jar</code> into your <code>mods</code> folder next to Meteor Client — Baritone is already inside.</p>
-    <a class="btn shine" href="downloads/manasluflux-0.10.1.jar" download id="dlbtn">manasluflux-0.10.1.jar</a>
+    <a class="btn prime" href="downloads/manasluflux-0.10.1.jar" download id="dlbtn">manasluflux-0.10.1.jar</a>
     <p class="fine">Requires Minecraft 1.21.11, Fabric Loader and Meteor Client.</p>
   </section>
 </main>
 
-<footer>Made by piolunson · ManasluFlux</footer>
-<script src="script.js?v=27"></script>
+<footer>
+  <span>Made by piolunson</span>
+  <span><a href="#top">Back to top</a></span>
+</footer>
+<script src="script.js?v=28"></script>
 </body>
 </html>

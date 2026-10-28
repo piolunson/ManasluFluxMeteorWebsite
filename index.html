@@ -29,16 +29,16 @@
 
 <main id="top">
   <section class="hero">
-    <p class="chip"><i aria-hidden="true"></i>v0.11.0 · Minecraft 1.21.11 · Fabric · Meteor Client</p>
+    <p class="chip"><i aria-hidden="true"></i>v0.12.0 · Minecraft 1.21.11 · Fabric · Meteor Client</p>
     <h1 id="title" aria-label="ManasluFlux"><span>Manaslu</span><span class="alt">Flux</span></h1>
     <p class="lead">A Meteor Client addon with flight, silent combat, client-side tricks and a handful of tools you'll actually keep enabled.</p>
     <div class="cta">
-      <a class="btn prime" href="#download">Download v0.11.0</a>
+      <a class="btn prime" href="#download">Download v0.12.0</a>
       <a class="btn ghost" href="#modules">Browse the modules</a>
       <a class="btn ghost" href="https://github.com/piolunson/manasluflux" target="_blank" rel="noopener">GitHub</a>
     </div>
     <ul class="stats">
-      <li><b data-count="46">0</b><span>Modules</span></li>
+      <li><b data-count="47">0</b><span>Modules</span></li>
       <li><b data-count="26">0</b><span>Commands</span></li>
       <li><b data-count="7">0</b><span>HUD elements</span></li>
     </ul>
@@ -84,7 +84,8 @@
   <section id="history" class="panel reveal">
     <div class="head"><h2>Changelog</h2></div>
     <ol class="log">
-<li class="now"><b>0.11.0</b><span>New module <b>Inventory Keeper</b> (<code>inventory-keeper</code>): press the <b>Save layout</b> button on the module screen and the slots you have now become the reference. Every <code>refresh-rate</code> milliseconds (default 200, <code>0</code> = every tick) it re-reads the inventory and swaps any saved item back into its slot — the item sitting in the wrong place is swapped out to where the wanted one came from, so nothing is dropped and nothing leaves your inventory. <code>only-hotbar</code> keeps just the nine hotbar slots in order. Items that were used up or left in a chest are skipped, the checks only run with no screen open and an empty cursor so it never fights a drag, at most 8 swaps happen per check, and the layout is saved in the Meteor config so it survives restarts. Counts: 46 modules, Player 7.</span></li>
+<li class="now"><b>0.12.0</b><span>New module <b>Place Travel</b> (<code>place-travel</code>): one-key travel for the nether roof. It holds forward and sprint, and jumps on the first tick you are back on the ground — the 10 tick jump cooldown is skipped, so the hops come out back to back. While you run it lays a straight line of blocks ahead of you, <code>distance</code> blocks in front (default 2), at the <code>height</code> you pick: <b>Floor</b> (default) keeps the level you are running on solid so a hole cannot drop you, while <code>Feet</code> / <code>Head</code> / <code>Above head</code> build the line over you. The line is pinned to the block level you last stood on, so it stays flat through the jump arc. Counts: 47 modules, Movement 6.</span></li>
+<li><b>0.11.0</b><span>New module <b>Inventory Keeper</b> (<code>inventory-keeper</code>): press the <b>Save layout</b> button on the module screen and the slots you have now become the reference. Every <code>refresh-rate</code> milliseconds (default 200, <code>0</code> = every tick) it re-reads the inventory and swaps any saved item back into its slot — the item sitting in the wrong place is swapped out to where the wanted one came from, so nothing is dropped and nothing leaves your inventory. <code>only-hotbar</code> keeps just the nine hotbar slots in order. Items that were used up or left in a chest are skipped, the checks only run with no screen open and an empty cursor so it never fights a drag, at most 8 swaps happen per check, and the layout is saved in the Meteor config so it survives restarts. Counts: 46 modules, Player 7.</span></li>
 <li><b>0.10.1</b><span><b>AC PacketFlood</b> no longer waits for the game tick: place/break packets are fired by a continuous 1 ms loop, so <code>place-delay-ms 1</code> is roughly 1000 packets per second per action and <code>0</code> bursts until <code>max-packets-per-second</code> is hit. Plans are still rebuilt each tick on the game thread; batches go out whole and the loop survives exceptions.</span></li>
 <li><b>0.10.0</b><span>New command <b>.mffakeplayer</b> — a fake player the client really believes is a player, unlike Meteor's .fake-player: it gets its own player-list entry (tab list, nametags, skins) and is registered in <code>world.getPlayers()</code> like a joining player, so auras, target finding and anything else that only reacts to real players picks it up. <code>add [name]</code>, <code>remove</code>, <code>clear</code>, <code>list</code>, <code>tp</code>, <code>health &lt;hp&gt;</code>; it spawns where you look and copies your inventory so armor counts in damage.</span></li>
 <li><b>0.9.0</b><span>New module <b>AC PacketFlood</b> (`ac-pcktflood`): a crystal aura on the packet timeline — every place and break is a raw packet fired by a millisecond scheduler, with a packet delay in ms (default 1), per-action retries and retry delay (so the timeline reads 1ms:packet 3ms:retry 5ms:retry … 6ms:packet), bases-per-tick, all the usual aura settings and a max-packets-per-second cap. Retries stop the instant the server confirms with a spawn/destroy packet. <b>Modules re-categorised</b>: the old "Main" and "Rewrite" buckets are gone — Combat (8), Movement (5), Player (6), World (4), Client Side (9), Utility (13), each with its own tab icon.</span></li>
@@ -104,8 +105,8 @@
 
   <section id="download" class="panel reveal dl">
     <h2>Get the jar</h2>
-    <p class="sub">Drop <code>manasluflux-0.11.0.jar</code> into your <code>mods</code> folder next to Meteor Client — Baritone is already inside.</p>
-    <a class="btn prime" href="downloads/manasluflux-0.11.0.jar" download id="dlbtn">manasluflux-0.11.0.jar</a>
+    <p class="sub">Drop <code>manasluflux-0.12.0.jar</code> into your <code>mods</code> folder next to Meteor Client — Baritone is already inside.</p>
+    <a class="btn prime" href="downloads/manasluflux-0.12.0.jar" download id="dlbtn">manasluflux-0.12.0.jar</a>
     <p class="fine">Requires Minecraft 1.21.11, Fabric Loader and Meteor Client.</p>
   </section>
 </main>
@@ -114,6 +115,6 @@
   <span>Made by piolunson</span>
   <span><a href="#top">Back to top</a></span>
 </footer>
-<script src="script.js?v=29"></script>
+<script src="script.js?v=30"></script>
 </body>
 </html>

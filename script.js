@@ -33,6 +33,7 @@ const MODS=[
 ["Sound Muter","Client Side","Meteor's SoundBlocker rewritten: mutes specific sounds picked from a sound list, client-side."],
 ["Tab Complete Privacy","Utility","Meteor-style TabCompletePrivacy rewritten: cancels tab-complete packets that would leak private commands - block all, or block by prefixes, words or symbols."],
 ["Tab Logger","Utility","Meteor-style TabLogger rewritten: keeps a per-server history of every tab-list player (uuid, name, ping history) in a text file."],
+["Place Travel","Movement","Travel for the nether roof: holds forward and sprint, jumps the instant you land (no jump cooldown) and lays a straight line of blocks ahead of you - distance setting, and a height setting for floor or above-head."],
 ["Universal Flight","Movement","Vanilla creative flight with adjustable speed. Force it on all the time, or toggle it with a double-jump like creative (always-fly option)."],
 ["Waypoint","Utility","Stores waypoints added with .mfwaypoint and renders beacon-like beams to them."],
 ["Whitelist Fast Use","Player","Toggles Meteor's FastUse automatically based on the item you're holding."],

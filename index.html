@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#0a0a0a">
 <title>ManasluFlux — Meteor Client addon for Minecraft 1.21.11</title>
-<meta name="description" content="46 modules across six categories, 26 commands and 7 HUD elements for Meteor Client on Fabric, for Minecraft 1.21.11.">
+<meta name="description" content="46 modules across six categories, 27 commands and 7 HUD elements for Meteor Client on Fabric, for Minecraft 1.21.11.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
@@ -29,17 +29,17 @@
 
 <main id="top">
   <section class="hero">
-    <p class="chip"><i aria-hidden="true"></i>v1.2.1 · Minecraft 1.21.11 · Fabric · Meteor Client</p>
+    <p class="chip"><i aria-hidden="true"></i>v1.3.0 · Minecraft 1.21.11 · Fabric · Meteor Client</p>
     <h1 id="title" aria-label="ManasluFlux"><span>Manaslu</span><span class="alt">Flux</span></h1>
     <p class="lead">A Meteor Client addon with flight, silent combat, client-side tricks and a handful of tools you'll actually keep enabled.</p>
     <div class="cta">
-      <a class="btn prime" href="#download">Download v1.2.1</a>
+      <a class="btn prime" href="#download">Download v1.3.0</a>
       <a class="btn ghost" href="#modules">Browse the modules</a>
       <a class="btn ghost" href="https://github.com/piolunson/manasluflux" target="_blank" rel="noopener">GitHub</a>
     </div>
     <ul class="stats">
       <li><b data-count="46">0</b><span>Modules</span></li>
-      <li><b data-count="26">0</b><span>Commands</span></li>
+      <li><b data-count="27">0</b><span>Commands</span></li>
       <li><b data-count="7">0</b><span>HUD elements</span></li>
     </ul>
   </section>
@@ -84,7 +84,8 @@
   <section id="history" class="panel reveal">
     <div class="head"><h2>Changelog</h2></div>
     <ol class="log">
-<li class="now"><b>1.2.1</b><span>Launch-crash fix. The mixin config still listed <code>EndCrystalRendererMixin</code>, a class deleted in 1.0.0 with Crystal Optimizer - mixin reads the config before anything else and a missing entry is fatal, so the game died on startup with <code>InvalidMixinException</code> (1.1.0 and 1.2.0 both shipped it). The config now lists exactly the two mixins that exist in the jar. Cobweb Bypass itself is unchanged.</span></li>
+<li class="now"><b>1.3.0</b><span>New command <b>.mfwebspeed</b>: autoconfig for Cobweb Bypass that measures instead of guessing. It takes your keys, walks you into the nearest cobweb and sweeps every horizontal × vertical pair from <code>0</code> up to the max you pass (in steps, default 20), timing how many ticks it takes to leave the web while holding forward and jump. A lagback during a combo marks that combo failed; the fastest pair with none is applied as <code>Custom</code>. <code>negative</code> also tries <code>-5..-1</code> (off by default, so the sweep normally runs 0 → max), <code>.mfwebspeed stop</code> restores the old settings, and sweeps over 400 combinations are refused. Counts: 46 modules, 27 commands.</span></li>
+<li><b>1.2.1</b><span>Launch-crash fix. The mixin config still listed <code>EndCrystalRendererMixin</code>, a class deleted in 1.0.0 with Crystal Optimizer - mixin reads the config before anything else and a missing entry is fatal, so the game died on startup with <code>InvalidMixinException</code> (1.1.0 and 1.2.0 both shipped it). The config now lists exactly the two mixins that exist in the jar. Cobweb Bypass itself is unchanged.</span></li>
 <li><b>1.2.0</b><span>New module <b>Cobweb Bypass</b> (<code>cobweb-bypass</code>): no-slow in webs. Minecraft 1.21.11 does not slow your velocity directly any more - <code>slowMovement</code> stores a multiplier (0.25 / 0.05 / 0.25 for cobwebs) that the movement step applies to the tick's delta - so the module swaps that single number for a softened one, entirely client-side. <code>horizontal</code> / <code>vertical</code> are percent of the slow removed (100 = no slow at all), <code>max-speed</code> caps the per-axis step, <code>burst-ticks</code> softens only the first ticks in a web, and <code>all-stuck-blocks</code> covers more than cobwebs. Profiles: <b>Vanilla</b> (full speed - servers that never simulate webs), <b>NCP</b>, <b>Themis</b>, <b>Grim</b> (short burst only, since Grim re-simulates webs itself) and <b>Custom</b>. A lagback watcher reports correction teleports that follow the trick and can drop back to vanilla slow for <code>pause-ticks</code>. Counts: 46 modules, Movement 8.</span></li>
 <li><b>1.1.0</b><span>New module <b>VClip PhaseFill</b> (<code>vclip-phasefill</code>): the phase-fill trick in one one-shot module. Turning it on <b>vclips</b> you <code>distance</code> blocks (default 3) straight <b>Down</b> or <b>Up</b>, then <b>fills the blocks your body was standing in before the clip</b> — feet and head, taken from your hotbar, <code>blocks-per-tick</code> each tick and retried until they land — and waits for the server's <b>rubberband</b> correction. <code>hold-position</code> keeps re-applying the clipped spot while waiting, because the client pushes an entity out of a solid block on its own. If no rubberband arrives within <code>timeout</code> ticks (default 20, <code>0</code> = right away) it <b>vclips you back</b> to where you started. Counts: 45 modules, Movement 7.</span></li>
 <li><b>1.0.0</b><span>First stable release. <b>AC PacketFlood</b> and <b>Crystal Optimizer</b> are gone, along with the 1 ms packet scheduler and the end-crystal render mixin that only existed to serve them - Crystal Aura and Auto Totem keep their own packet level, retries and packet cap. <b>Add Text</b> stopped being a module: <code>.mfaddtext &lt;text&gt;</code> is now a chat command that prints a line only for you and sends nothing, with no stored list between sessions. Counts: 44 modules (Combat 7, Movement 6, Player 7, World 4, Client Side 8, Utility 12), 26 commands, 7 HUD elements.</span></li>
@@ -109,8 +110,8 @@
 
   <section id="download" class="panel reveal dl">
     <h2>Get the jar</h2>
-    <p class="sub">Drop <code>manasluflux-1.2.1.jar</code> into your <code>mods</code> folder next to Meteor Client — Baritone is already inside.</p>
-    <a class="btn prime" href="downloads/manasluflux-1.2.1.jar" download id="dlbtn">manasluflux-1.2.1.jar</a>
+    <p class="sub">Drop <code>manasluflux-1.3.0.jar</code> into your <code>mods</code> folder next to Meteor Client — Baritone is already inside.</p>
+    <a class="btn prime" href="downloads/manasluflux-1.3.0.jar" download id="dlbtn">manasluflux-1.3.0.jar</a>
     <p class="fine">Requires Minecraft 1.21.11, Fabric Loader and Meteor Client.</p>
   </section>
 </main>
@@ -119,6 +120,6 @@
   <span>Made by piolunson</span>
   <span><a href="#top">Back to top</a></span>
 </footer>
-<script src="script.js?v=33"></script>
+<script src="script.js?v=34"></script>
 </body>
 </html>

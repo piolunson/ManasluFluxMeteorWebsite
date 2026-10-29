@@ -29,11 +29,11 @@
 
 <main id="top">
   <section class="hero">
-    <p class="chip"><i aria-hidden="true"></i>v1.6.2 · Minecraft 1.21.11 · Fabric · Meteor Client</p>
+    <p class="chip"><i aria-hidden="true"></i>v1.6.3 · Minecraft 1.21.11 · Fabric · Meteor Client</p>
     <h1 id="title" aria-label="ManasluFlux"><span>Manaslu</span><span class="alt">Flux</span></h1>
     <p class="lead">A Meteor Client addon with flight, silent combat, client-side tricks and a handful of tools you'll actually keep enabled.</p>
     <div class="cta">
-      <a class="btn prime" href="#download">Download v1.6.2</a>
+      <a class="btn prime" href="#download">Download v1.6.3</a>
       <a class="btn ghost" href="#modules">Browse the modules</a>
       <a class="btn ghost" href="https://github.com/piolunson/manasluflux" target="_blank" rel="noopener">GitHub</a>
     </div>
@@ -84,7 +84,8 @@
   <section id="history" class="panel reveal">
     <div class="head"><h2>Changelog</h2></div>
     <ol class="log">
-<li class="now"><b>1.6.2</b><span><b>Cobweb Bypass: the timer can follow a graph.</b> <code>timer-mode</code> <b>Graph</b> (default) drives Meteor's Timer from <code>graph-formula</code>, an expression in <code>t</code> (seconds spent in the web), scaled by <code>graph-scale</code> (default 0.5): the speed is <code>1 + graph-scale × value</code>, so a value of 0 is the normal 1x timer and a value of 1 is 2x at scale 1, 1.5x at 0.5. The default formula <code>1 - exp(-t / 1.5)</code> is fast at first and then flattens — 1.24x at 1s, 1.43x at 3s, plateau 1.5x — and never slows back down. <b>Constant</b> keeps the old <code>timer-multiplier</code>. Any formula of <code>t</code> works (<code>exp, log, sqrt, abs, min, max, floor, round</code> and the usual operators); a broken one warns once and stays at 1x.</span></li>
+<li class="now"><b>1.6.3</b><span><b>Cobweb Bypass now defaults to the tuned setup.</b> A fresh install starts where the working combo ended: NCP profile, horizontal and vertical <code>100</code>, <code>max-speed</code> <code>59.142</code>, <code>web-timer</code> <code>1.35</code>, <code>on-lagback</code> Notify with <code>pause-ticks</code> 0, sprint tweaks <code>2</code> / <code>1</code>, and the graph timer with <code>1 - exp(-t / 1.5)</code> at scale <code>8.0</code> (~9x plateau). Defaults only touch settings you never changed — your saved config keeps its values.</span></li>
+<li><b>1.6.2</b><span><b>Cobweb Bypass: the timer can follow a graph.</b> <code>timer-mode</code> <b>Graph</b> (default) drives Meteor's Timer from <code>graph-formula</code>, an expression in <code>t</code> (seconds spent in the web), scaled by <code>graph-scale</code> (default 0.5): the speed is <code>1 + graph-scale × value</code>, so a value of 0 is the normal 1x timer and a value of 1 is 2x at scale 1, 1.5x at 0.5. The default formula <code>1 - exp(-t / 1.5)</code> is fast at first and then flattens — 1.24x at 1s, 1.43x at 3s, plateau 1.5x — and never slows back down. <b>Constant</b> keeps the old <code>timer-multiplier</code>. Any formula of <code>t</code> works (<code>exp, log, sqrt, abs, min, max, floor, round</code> and the usual operators); a broken one warns once and stays at 1x.</span></li>
 <li><b>1.6.1</b><span><b>New category: Bypasses.</b> A seventh ClickGUI tab, <b>Manaslu Flux Bypasses</b>, holds the modules whose job is beating a server or anticheat check rather than changing what you do. <b>Cobweb Bypass</b>, <b>Click TP</b>, <b>VClip PhaseFill</b> and <b>Universal Flight</b> move there out of Movement, and <b>Pearl Phase</b> out of Combat. Same 46 modules, same 27 commands, same settings - only the tab they live in.</span></li>
 <li><b>1.6.0</b><span><b>Cobweb Bypass</b> gets two new groups. <b>Sprint Tweaks</b>: <code>stop-sprint-before</code> releases your sprint a set number of ticks before a cobweb is ahead, and <code>start-sprint-after</code> holds sprint off inside a web until that many ticks have passed, then turns it back on while you are walking — applied before the player tick, and again after it, because a held sprint key would otherwise switch it straight off/on again. <b>Timer</b>: <code>timer-multiplier</code> runs Meteor's own Timer only while you actually stand in a cobweb and restores it the moment you leave, so nothing stays overridden.</span></li>
 <li><b>1.5.0</b><span><b>Crystal Aura</b> is now a full port of BlackOut's Auto Crystal+, vendored unmodified in <code>blackout/modules/AutoCrystalPlus.java</code>. It takes their whole decision model: enemy / friend / self damage with health, the min-max ratio checks, force pop and anti-pop, Normal vs Safe damage checking, min place and explode damage, their place and explode speed models with a slow speed under a damage threshold, instant place / instant attack, six switch modes with a switch penalty, only-own / inhibit / existed / set-dead gates, and extrapolated hitboxes for damage and range checks. Not ported: ID Predict, the AutoMine/PistonCrystal compatibility group, and the three animated box styles. The old Meteor-style module and its Packet group are gone.</span></li>
@@ -117,8 +118,8 @@
 
   <section id="download" class="panel reveal dl">
     <h2>Get the jar</h2>
-    <p class="sub">Drop <code>manasluflux-1.6.2.jar</code> into your <code>mods</code> folder next to Meteor Client — Baritone is already inside.</p>
-    <a class="btn prime" href="downloads/manasluflux-1.6.2.jar" download id="dlbtn">manasluflux-1.6.2.jar</a>
+    <p class="sub">Drop <code>manasluflux-1.6.3.jar</code> into your <code>mods</code> folder next to Meteor Client — Baritone is already inside.</p>
+    <a class="btn prime" href="downloads/manasluflux-1.6.3.jar" download id="dlbtn">manasluflux-1.6.3.jar</a>
     <p class="fine">Requires Minecraft 1.21.11, Fabric Loader and Meteor Client.</p>
   </section>
 </main>

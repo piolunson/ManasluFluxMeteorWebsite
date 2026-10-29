@@ -29,11 +29,11 @@
 
 <main id="top">
   <section class="hero">
-    <p class="chip"><i aria-hidden="true"></i>v1.3.1 · Minecraft 1.21.11 · Fabric · Meteor Client</p>
+    <p class="chip"><i aria-hidden="true"></i>v1.3.2 · Minecraft 1.21.11 · Fabric · Meteor Client</p>
     <h1 id="title" aria-label="ManasluFlux"><span>Manaslu</span><span class="alt">Flux</span></h1>
     <p class="lead">A Meteor Client addon with flight, silent combat, client-side tricks and a handful of tools you'll actually keep enabled.</p>
     <div class="cta">
-      <a class="btn prime" href="#download">Download v1.3.1</a>
+      <a class="btn prime" href="#download">Download v1.3.2</a>
       <a class="btn ghost" href="#modules">Browse the modules</a>
       <a class="btn ghost" href="https://github.com/piolunson/manasluflux" target="_blank" rel="noopener">GitHub</a>
     </div>
@@ -84,7 +84,8 @@
   <section id="history" class="panel reveal">
     <div class="head"><h2>Changelog</h2></div>
     <ol class="log">
-<li class="now"><b>1.3.1</b><span><code>.mfwebspeed verbose</code>: the autoconfig now narrates itself. Add <code>verbose</code> to any form of the command and every combo prints <code>[3/36] testing horizontal 40% / vertical 60%</code> when it starts, then its verdict — <code>-&gt; OK - out in 3 tick(s)</code>, <code>-&gt; FAILED - the server pulled you back</code> or <code>-&gt; stuck - never left the web</code>. Off by default, so a normal sweep still only prints the final result.</span></li>
+<li class="now"><b>1.3.2</b><span>Cobweb Bypass gets a <b>web-timer</b>: a multiplier for walking inside webs that only touches the horizontal axes, so it speeds the walk up instead of throwing you out of the web. <code>1.0</code> (default) is off, <code>2.0</code> walks twice as fast, and it only applies while you are actually moving — before the <code>max-speed</code> cap, so the cap still decides what the server sees. The autoconfig pins it to 1.0 during a sweep and restores it after, so it keeps testing only the two percentages.</span></li>
+<li><b>1.3.1</b><span><code>.mfwebspeed verbose</code>: the autoconfig now narrates itself. Add <code>verbose</code> to any form of the command and every combo prints <code>[3/36] testing horizontal 40% / vertical 60%</code> when it starts, then its verdict — <code>-&gt; OK - out in 3 tick(s)</code>, <code>-&gt; FAILED - the server pulled you back</code> or <code>-&gt; stuck - never left the web</code>. Off by default, so a normal sweep still only prints the final result.</span></li>
 <li><b>1.3.0</b><span>New command <b>.mfwebspeed</b>: autoconfig for Cobweb Bypass that measures instead of guessing. It takes your keys, walks you into the nearest cobweb and sweeps every horizontal × vertical pair from <code>0</code> up to the max you pass (in steps, default 20), timing how many ticks it takes to leave the web while holding forward and jump. A lagback during a combo marks that combo failed; the fastest pair with none is applied as <code>Custom</code>. <code>negative</code> also tries <code>-5..-1</code> (off by default, so the sweep normally runs 0 → max), <code>.mfwebspeed stop</code> restores the old settings, and sweeps over 400 combinations are refused. Counts: 46 modules, 27 commands.</span></li>
 <li><b>1.2.1</b><span>Launch-crash fix. The mixin config still listed <code>EndCrystalRendererMixin</code>, a class deleted in 1.0.0 with Crystal Optimizer - mixin reads the config before anything else and a missing entry is fatal, so the game died on startup with <code>InvalidMixinException</code> (1.1.0 and 1.2.0 both shipped it). The config now lists exactly the two mixins that exist in the jar. Cobweb Bypass itself is unchanged.</span></li>
 <li><b>1.2.0</b><span>New module <b>Cobweb Bypass</b> (<code>cobweb-bypass</code>): no-slow in webs. Minecraft 1.21.11 does not slow your velocity directly any more - <code>slowMovement</code> stores a multiplier (0.25 / 0.05 / 0.25 for cobwebs) that the movement step applies to the tick's delta - so the module swaps that single number for a softened one, entirely client-side. <code>horizontal</code> / <code>vertical</code> are percent of the slow removed (100 = no slow at all), <code>max-speed</code> caps the per-axis step, <code>burst-ticks</code> softens only the first ticks in a web, and <code>all-stuck-blocks</code> covers more than cobwebs. Profiles: <b>Vanilla</b> (full speed - servers that never simulate webs), <b>NCP</b>, <b>Themis</b>, <b>Grim</b> (short burst only, since Grim re-simulates webs itself) and <b>Custom</b>. A lagback watcher reports correction teleports that follow the trick and can drop back to vanilla slow for <code>pause-ticks</code>. Counts: 46 modules, Movement 8.</span></li>
@@ -111,8 +112,8 @@
 
   <section id="download" class="panel reveal dl">
     <h2>Get the jar</h2>
-    <p class="sub">Drop <code>manasluflux-1.3.1.jar</code> into your <code>mods</code> folder next to Meteor Client — Baritone is already inside.</p>
-    <a class="btn prime" href="downloads/manasluflux-1.3.1.jar" download id="dlbtn">manasluflux-1.3.1.jar</a>
+    <p class="sub">Drop <code>manasluflux-1.3.2.jar</code> into your <code>mods</code> folder next to Meteor Client — Baritone is already inside.</p>
+    <a class="btn prime" href="downloads/manasluflux-1.3.2.jar" download id="dlbtn">manasluflux-1.3.2.jar</a>
     <p class="fine">Requires Minecraft 1.21.11, Fabric Loader and Meteor Client.</p>
   </section>
 </main>
@@ -121,6 +122,6 @@
   <span>Made by piolunson</span>
   <span><a href="#top">Back to top</a></span>
 </footer>
-<script src="script.js?v=35"></script>
+<script src="script.js?v=36"></script>
 </body>
 </html>

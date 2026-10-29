@@ -28,7 +28,7 @@ const MODS=[
 ["Mute","Utility","Hides chat messages from muted players or containing muted phrases (client-side)."],
 ["Packet Limiter","Client Side","Meteor-style PacketLimiter rewritten: caps outgoing packets per tick (keep-alive and pong always allowed) so laggy modules can't get you kicked for flooding."],
 ["Path","Utility","Draws a line from you to a target set with .mfpath. Doesn't work yet."],
-["Pearl Phase","Combat","Port of BlackOut's Auto Pearl: one-shot pearl at your own block to clip inside walls. Rotates, throws, restores your view and hotbar, then toggles off. Instant rotation and keep-rotation options."],
+["Pearl Phase","Combat","Full port of BlackOut's Auto Pearl (KassuK1/BlackOut, GPL-3.0 - the original is vendored in blackout/): pearl at your own block to clip inside walls. CC bypass places a block under you before the throw (their Constantiam anti-delay trick) with its own switch mode; switch modes Normal / Silent / PickSilent / InvSwitch pull the pearl from your hotbar or inventory and put it back; pitch 85 by default, instant rotation, keep rotation and swing toggles. Restores your view and inventory, then switches itself off."],
 ["Placer","World","Places whitelisted blocks everywhere around you - fills nearby air with the selected blocks from your inventory, nearest first. Radius, blocks-per-tick, silent rotation."],
 ["Ping Spoofer","Client Side","Changes your ping with three modes: Real (no change), More (genuinely adds latency by delaying replies) or Spoof (only fakes the tab-list ping)."],
 ["Sound Muter","Client Side","Meteor's SoundBlocker rewritten: mutes specific sounds picked from a sound list, client-side."],

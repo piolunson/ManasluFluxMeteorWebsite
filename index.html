@@ -29,11 +29,11 @@
 
 <main id="top">
   <section class="hero">
-    <p class="chip"><i aria-hidden="true"></i>v1.5.0 · Minecraft 1.21.11 · Fabric · Meteor Client</p>
+    <p class="chip"><i aria-hidden="true"></i>v1.6.0 · Minecraft 1.21.11 · Fabric · Meteor Client</p>
     <h1 id="title" aria-label="ManasluFlux"><span>Manaslu</span><span class="alt">Flux</span></h1>
     <p class="lead">A Meteor Client addon with flight, silent combat, client-side tricks and a handful of tools you'll actually keep enabled.</p>
     <div class="cta">
-      <a class="btn prime" href="#download">Download v1.5.0</a>
+      <a class="btn prime" href="#download">Download v1.6.0</a>
       <a class="btn ghost" href="#modules">Browse the modules</a>
       <a class="btn ghost" href="https://github.com/piolunson/manasluflux" target="_blank" rel="noopener">GitHub</a>
     </div>
@@ -84,7 +84,8 @@
   <section id="history" class="panel reveal">
     <div class="head"><h2>Changelog</h2></div>
     <ol class="log">
-<li class="now"><b>1.5.0</b><span><b>Crystal Aura</b> is now a full port of BlackOut's Auto Crystal+, vendored unmodified in <code>blackout/modules/AutoCrystalPlus.java</code>. It takes their whole decision model: enemy / friend / self damage with health, the min-max ratio checks, force pop and anti-pop, Normal vs Safe damage checking, min place and explode damage, their place and explode speed models with a slow speed under a damage threshold, instant place / instant attack, six switch modes with a switch penalty, only-own / inhibit / existed / set-dead gates, and extrapolated hitboxes for damage and range checks. Not ported: ID Predict, the AutoMine/PistonCrystal compatibility group, and the three animated box styles. The old Meteor-style module and its Packet group are gone.</span></li>
+<li class="now"><b>1.6.0</b><span><b>Cobweb Bypass</b> gets two new groups. <b>Sprint Tweaks</b>: <code>stop-sprint-before</code> releases your sprint a set number of ticks before a cobweb is ahead, and <code>start-sprint-after</code> holds sprint off inside a web until that many ticks have passed, then turns it back on while you are walking — applied before the player tick, and again after it, because a held sprint key would otherwise switch it straight off/on again. <b>Timer</b>: <code>timer-multiplier</code> runs Meteor's own Timer only while you actually stand in a cobweb and restores it the moment you leave, so nothing stays overridden.</span></li>
+<li><b>1.5.0</b><span><b>Crystal Aura</b> is now a full port of BlackOut's Auto Crystal+, vendored unmodified in <code>blackout/modules/AutoCrystalPlus.java</code>. It takes their whole decision model: enemy / friend / self damage with health, the min-max ratio checks, force pop and anti-pop, Normal vs Safe damage checking, min place and explode damage, their place and explode speed models with a slow speed under a damage threshold, instant place / instant attack, six switch modes with a switch penalty, only-own / inhibit / existed / set-dead gates, and extrapolated hitboxes for damage and range checks. Not ported: ID Predict, the AutoMine/PistonCrystal compatibility group, and the three animated box styles. The old Meteor-style module and its Packet group are gone.</span></li>
 <li><b>1.4.0</b><span><b>Pearl Phase</b> is now a full port of BlackOut's Auto Pearl, and BlackOut source files get vendored into a new <code>blackout/</code> folder for future ports (the original <code>AutoPearl.java</code> unmodified, plus their GPL-3.0 license and a README recording the pinned commit and how their helpers map onto Meteor). The port keeps their behaviour: <b>cc-bypass</b> places a block under you before the throw with its own switch mode, and the pearl has four <b>switch modes</b> — Normal, Silent, PickSilent and InvSwitch — pulling from your hotbar or inventory and putting it back. Pitch 85 by default, instant rotation, keep rotation and swing.</span></li>
 <li><b>1.3.2</b><span>Cobweb Bypass gets a <b>web-timer</b>: a multiplier for walking inside webs that only touches the horizontal axes, so it speeds the walk up instead of throwing you out of the web. <code>1.0</code> (default) is off, <code>2.0</code> walks twice as fast, and it only applies while you are actually moving — before the <code>max-speed</code> cap, so the cap still decides what the server sees. The autoconfig pins it to 1.0 during a sweep and restores it after, so it keeps testing only the two percentages.</span></li>
 <li><b>1.3.1</b><span><code>.mfwebspeed verbose</code>: the autoconfig now narrates itself. Add <code>verbose</code> to any form of the command and every combo prints <code>[3/36] testing horizontal 40% / vertical 60%</code> when it starts, then its verdict — <code>-&gt; OK - out in 3 tick(s)</code>, <code>-&gt; FAILED - the server pulled you back</code> or <code>-&gt; stuck - never left the web</code>. Off by default, so a normal sweep still only prints the final result.</span></li>
@@ -114,8 +115,8 @@
 
   <section id="download" class="panel reveal dl">
     <h2>Get the jar</h2>
-    <p class="sub">Drop <code>manasluflux-1.5.0.jar</code> into your <code>mods</code> folder next to Meteor Client — Baritone is already inside.</p>
-    <a class="btn prime" href="downloads/manasluflux-1.5.0.jar" download id="dlbtn">manasluflux-1.5.0.jar</a>
+    <p class="sub">Drop <code>manasluflux-1.6.0.jar</code> into your <code>mods</code> folder next to Meteor Client — Baritone is already inside.</p>
+    <a class="btn prime" href="downloads/manasluflux-1.6.0.jar" download id="dlbtn">manasluflux-1.6.0.jar</a>
     <p class="fine">Requires Minecraft 1.21.11, Fabric Loader and Meteor Client.</p>
   </section>
 </main>
@@ -124,6 +125,6 @@
   <span>Made by piolunson</span>
   <span><a href="#top">Back to top</a></span>
 </footer>
-<script src="script.js?v=38"></script>
+<script src="script.js?v=39"></script>
 </body>
 </html>

@@ -79,6 +79,7 @@ const CMDS=[
 [".mfuuid","Show your in-game UUID."],
 [".mfwaypoint","Add, list or clear waypoints."],
 [".mfwebspeed <max> [step] [negative] [verbose] | stop","Autoconfig for Cobweb Bypass: walks you into the nearest cobweb and tries every horizontal/vertical pair from 0 to your max (step default 20), timing how fast you leave the web. A lagback marks that combo as failed; the fastest combo with none is applied as Custom. negative adds -5..-1 (off by default); verbose prints every combo with its OK / FAILED / stuck verdict as the sweep runs; stop restores your settings."]
+[".mfvisualizewebbypassgraph","Opens your browser with a chart of the Cobweb Bypass timer: the multiplier over the first 20 seconds in a web, sampled from the module's own formula, with a slider and hover to scrub the curve and a warning card if the formula does not parse."],
 ];
 const cats=["All","Combat","Movement","Player","World","Client Side","Utility","Bypasses"];
 // category icons (mini Minecraft-style SVGs: nether star, sign, end crystal, enchanted book)

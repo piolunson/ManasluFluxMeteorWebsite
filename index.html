@@ -29,11 +29,11 @@
 
 <main id="top">
   <section class="hero">
-    <p class="chip"><i aria-hidden="true"></i>v1.15.3 · Minecraft 1.21.11 · Fabric · Meteor Client</p>
+    <p class="chip"><i aria-hidden="true"></i>v1.15.4 · Minecraft 1.21.11 · Fabric · Meteor Client</p>
     <h1 id="title" aria-label="ManasluFlux"><span>Manaslu</span><span class="alt">Flux</span></h1>
     <p class="lead">A Meteor Client addon with flight, silent combat, client-side tricks and a handful of tools you'll actually keep enabled.</p>
     <div class="cta">
-      <a class="btn prime" href="#download">Download v1.15.3</a>
+      <a class="btn prime" href="#download">Download v1.15.4</a>
       <a class="btn ghost" href="#modules">Browse the modules</a>
       <a class="btn ghost" href="https://github.com/piolunson/manasluflux" target="_blank" rel="noopener">GitHub</a>
     </div>
@@ -84,7 +84,8 @@
   <section id="history" class="panel reveal">
     <div class="head"><h2>Changelog</h2></div>
     <ol class="log">
-<li class="now"><b>1.15.3</b><span><b>New module: Custom ESP</b> (<code>custom-esp</code>, Client Side) - ESP where you pick the entities like normal (an entity-type list, players by default) and every match is drawn with Block Highlight's box: <b>fill</b> whose alpha comes from <b>side-color</b>, real <b>line-thickness</b> (edges drawn as thin boxes, since Meteor's lines are one pixel), and a <b>glow</b> halo of <b>glow-layers</b> shells spread over <b>glow-spread</b> at <b>glow-strength</b>. Boxes fade in when an entity appears and fade out from their last box when it dies or leaves, and they follow the entity's interpolated hitbox. Counts: 65 modules, Client Side 13.</span></li>
+<li class="now"><b>1.15.4</b><span><b>Custom ESP draws the model, not the hitbox.</b> <b>style: Model</b> (default) sends each selected entity through Meteor's <code>WireframeEntityRenderer</code> - the call Meteor's own ESP makes for its wireframe mode - so the outline is the entity's real model quads: head, arms, legs, wings, every part posed and rotated, moving as it walks. The Block Highlight look stays: <b>fill</b> with the side alpha, and a <b>glow</b> halo that in Model style is the same model scaled slightly larger, so it hugs the shape instead of box-bloating around it. <b>style: Box</b> keeps the old hitbox drawing, and that is where <b>line-thickness</b> still applies (a model's edges are its own quads, always one pixel). Fades are unchanged; a fade-out falls back to the last hitbox, since a dead entity has no render state left. Counts: 65 modules, Client Side 13.</span></li>
+<li><b>1.15.3</b><span><b>New module: Custom ESP</b> (<code>custom-esp</code>, Client Side) - ESP where you pick the entities like normal (an entity-type list, players by default) and every match is drawn with Block Highlight's box: <b>fill</b> whose alpha comes from <b>side-color</b>, real <b>line-thickness</b> (edges drawn as thin boxes, since Meteor's lines are one pixel), and a <b>glow</b> halo of <b>glow-layers</b> shells spread over <b>glow-spread</b> at <b>glow-strength</b>. Boxes fade in when an entity appears and fade out from their last box when it dies or leaves, and they follow the entity's interpolated hitbox. Counts: 65 modules, Client Side 13.</span></li>
 <li><b>1.15.2</b><span><b>New module: XCarry</b> (<code>xcarry</code>, Player) - four extra storage slots in your 2x2 crafting grid. The <code>CloseHandledScreenC2SPacket</code> for your own player handler is held back while the grid (slots 1-4) holds anything, so the server never empties it and the slots stay live: press <b>E</b> again and the items are still in the grid. Chests, shulkers and anvils close normally (different sync id), an empty grid closes like vanilla, and switching the module off sends the real close so the items come back to your inventory. <b>chat-feedback</b> reports both directions; the info string reads <code>storing</code> while it is holding. Counts: 64 modules, Player 9.</span></li>
 <li><b>1.15.1</b><span><b>Self Mine Out now holds the pickaxe itself.</b> It used to hand the block to Speed Mine and never touch your hand, so the mine ran with whatever slot you happened to be on. It now picks the hotbar slot with the highest break delta for the block about to go (<code>BlockUtils.getBreakDelta</code> over slots 1-9) and puts it in your hand <b>before</b> the block is requested. <b>tool-switch</b> is <b>Silent</b> by default - one <code>UpdateSelectedSlotC2SPacket</code>, so the server believes you are on the pickaxe while your hotbar keeps the slot it is on - or <b>Visible</b> (also selects the slot, restored afterwards) or <b>None</b> (the old behaviour). The hand goes back the moment both the head and feet blocks are clear, and on disable, so nothing is left over after a phase. Counts: 63 modules.</span></li>
 <li><b>1.15.0</b><span><b>New module: Silent Timer Switch</b> (<code>mf-silent-switch</code>, Bypasses) - a held-item switch on a timer. <b>item</b> is what it switches to (an item picker, default totem of undying), <b>every</b> is how often in ticks (default 60 = 3 s, 20 ticks = 1 s) and <b>hold</b> is how long it stays switched (default 10 ticks). <b>mode: Silent</b> (default) is one <code>UpdateSelectedSlotC2SPacket</code> and nothing else, so the server believes you hold the item for the hold time while your client keeps the slot it was already on - the hotbar never moves - and <b>Visible</b> moves your real slot and puts it back. Hotbar slots 1-9 only (the protocol can only select those), it skips the slot you are already on, and it restores the slot on disable too, so turning it off mid-hold cannot leave the server on the wrong item. The info string shows the chosen item. Counts: 63 modules, Bypasses 10.</span></li>
@@ -152,8 +153,8 @@
 
   <section id="download" class="panel reveal dl">
     <h2>Get the jar</h2>
-    <p class="sub">Drop <code>manasluflux-1.15.3.jar</code> into your <code>mods</code> folder next to Meteor Client — Baritone is already inside.</p>
-    <a class="btn prime" href="downloads/manasluflux-1.15.3.jar" download id="dlbtn">manasluflux-1.15.3.jar</a>
+    <p class="sub">Drop <code>manasluflux-1.15.4.jar</code> into your <code>mods</code> folder next to Meteor Client — Baritone is already inside.</p>
+    <a class="btn prime" href="downloads/manasluflux-1.15.4.jar" download id="dlbtn">manasluflux-1.15.4.jar</a>
     <p class="fine">Requires Minecraft 1.21.11, Fabric Loader and Meteor Client.</p>
   </section>
 </main>

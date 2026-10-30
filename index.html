@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#0a0a0a">
 <title>ManasluFlux — Meteor Client addon for Minecraft 1.21.11</title>
-<meta name="description" content="46 modules across seven categories, 28 commands and 7 HUD elements for Meteor Client on Fabric, for Minecraft 1.21.11.">
+<meta name="description" content="47 modules across seven categories, 28 commands and 7 HUD elements for Meteor Client on Fabric, for Minecraft 1.21.11.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
@@ -29,16 +29,16 @@
 
 <main id="top">
   <section class="hero">
-    <p class="chip"><i aria-hidden="true"></i>v1.8.0 · Minecraft 1.21.11 · Fabric · Meteor Client</p>
+    <p class="chip"><i aria-hidden="true"></i>v1.9.0 · Minecraft 1.21.11 · Fabric · Meteor Client</p>
     <h1 id="title" aria-label="ManasluFlux"><span>Manaslu</span><span class="alt">Flux</span></h1>
     <p class="lead">A Meteor Client addon with flight, silent combat, client-side tricks and a handful of tools you'll actually keep enabled.</p>
     <div class="cta">
-      <a class="btn prime" href="#download">Download v1.8.0</a>
+      <a class="btn prime" href="#download">Download v1.9.0</a>
       <a class="btn ghost" href="#modules">Browse the modules</a>
       <a class="btn ghost" href="https://github.com/piolunson/manasluflux" target="_blank" rel="noopener">GitHub</a>
     </div>
     <ul class="stats">
-      <li><b data-count="46">0</b><span>Modules</span></li>
+      <li><b data-count="47">0</b><span>Modules</span></li>
       <li><b data-count="28">0</b><span>Commands</span></li>
       <li><b data-count="7">0</b><span>HUD elements</span></li>
     </ul>
@@ -48,7 +48,7 @@
     <div class="head">
       <div>
         <h2>Modules</h2>
-        <p class="sub" id="modcount" aria-live="polite">46 / 46 shown</p>
+        <p class="sub" id="modcount" aria-live="polite">47 / 47 shown</p>
       </div>
       <div class="find">
         <input id="q" type="search" placeholder="Search modules" aria-label="Search modules">
@@ -84,7 +84,8 @@
   <section id="history" class="panel reveal">
     <div class="head"><h2>Changelog</h2></div>
     <ol class="log">
-<li class="now"><b>1.8.0</b><span><b>Graph timer gets a <code>max-timer</code> ceiling</b> (default 10, 0 = no cap). It clamps the curve, so a steep formula or a big scale stops at the cap instead of handing the server a huge tick jump; Constant mode is untouched. <code>.mfvisualizewebbypassgraph</code> draws it as a green dashed line, and the samples are already clamped, so the chart shows the real ceiling.</span></li>
+<li class="now"><b>1.9.0</b><span><b>New module: Bed Aura</b> (<code>mf-bed-aura</code>) — places and pops <b>beds</b> in the Nether and the End and <b>charged respawn anchors</b> in the Overworld and the End, picking whichever the dimension lets explode and falling back to the other item when the first isn't in your inventory, so one module covers every dimension. Their bed geometry: rotate to a cardinal direction so the bed's head half lands on the target block, both halves must be free, then pop it with a plain use (an anchor pops with a glowstone-free use, so the glowstone you charged it with stays out of that hand). Settings: <code>place-delay</code>, <code>target-range</code>, <code>min-damage</code>, <code>max-self-damage</code>, <code>anti-suicide</code>, <code>place-range</code>, <code>auto-switch</code>, <code>anchor-charges</code> (1–4 glowstone), <code>charge-delay</code>, pause on eat/drink/mine, and a render box. Every numeric setting runs 0–10000. Counts: 47 modules, 28 commands.</span></li>
+<li><b>1.8.0</b><span><b>Graph timer gets a <code>max-timer</code> ceiling</b> (default 10, 0 = no cap). It clamps the curve, so a steep formula or a big scale stops at the cap instead of handing the server a huge tick jump; Constant mode is untouched. <code>.mfvisualizewebbypassgraph</code> draws it as a green dashed line, and the samples are already clamped, so the chart shows the real ceiling.</span></li>
 <li><b>1.7.0</b><span><b>New command <code>.mfvisualizewebbypassgraph</code>.</b> It opens your browser on a chart of the Cobweb Bypass timer: the multiplier over the first 20 seconds in a web, sampled from the module's own formula once every 0.05 s, so the picture always matches what the timer is doing. Chips carry the mode, formula, scale, web-timer and peak; a slider and pointer hover scrub the curve (1.00x at 0s, 8.44x at 3s, 9.60x plateau on the defaults); a formula that does not parse shows an error card instead of a fake curve. Counts: 46 modules, 28 commands.</span></li>
 <li><b>1.6.4</b><span><b>Graph scale default is 8.605</b>, not the 8.0 that 1.6.3 shipped — the plateau is now <code>1 + 8.605 = 9.605x</code>. Existing configs keep whatever value they already have.</span></li>
 <li><b>1.6.3</b><span><b>Cobweb Bypass now defaults to the tuned setup.</b> A fresh install starts where the working combo ended: NCP profile, horizontal and vertical <code>100</code>, <code>max-speed</code> <code>59.142</code>, <code>web-timer</code> <code>1.35</code>, <code>on-lagback</code> Notify with <code>pause-ticks</code> 0, sprint tweaks <code>2</code> / <code>1</code>, and the graph timer with <code>1 - exp(-t / 1.5)</code> at scale <code>8.0</code> (~9x plateau). Defaults only touch settings you never changed — your saved config keeps its values.</span></li>
@@ -121,8 +122,8 @@
 
   <section id="download" class="panel reveal dl">
     <h2>Get the jar</h2>
-    <p class="sub">Drop <code>manasluflux-1.8.0.jar</code> into your <code>mods</code> folder next to Meteor Client — Baritone is already inside.</p>
-    <a class="btn prime" href="downloads/manasluflux-1.8.0.jar" download id="dlbtn">manasluflux-1.8.0.jar</a>
+    <p class="sub">Drop <code>manasluflux-1.9.0.jar</code> into your <code>mods</code> folder next to Meteor Client — Baritone is already inside.</p>
+    <a class="btn prime" href="downloads/manasluflux-1.9.0.jar" download id="dlbtn">manasluflux-1.9.0.jar</a>
     <p class="fine">Requires Minecraft 1.21.11, Fabric Loader and Meteor Client.</p>
   </section>
 </main>

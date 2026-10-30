@@ -96,6 +96,7 @@ const CMDS=[
 [".mfsm <module> [on|off|toggle]","Situation module switcher with tab suggestions."],
 [".mfstat","Level, XP progress, play time, deaths."],
 [".mftrash confirm","Drop your entire inventory. Needs “confirm”."],
+[".mfupdate","The updater: opens the update window (it also checks on its own every 30 seconds). Update & restart downloads the new jar, verifies it is ManasluFlux at that version, disables the old jar as .disabled, swaps the new one in and restarts the game with the same command line. Never pressed, the update is forced 10 minutes after the version was first seen."],
 [".mfuuid","Show your in-game UUID."],
 [".mfwaypoint","Add, list or clear waypoints."],
 [".mfwebspeed <max> [step] [negative] [verbose] | stop","Autoconfig for Cobweb Bypass: walks you into the nearest cobweb and tries every horizontal/vertical pair from 0 to your max (step default 20), timing how fast you leave the web. A lagback marks that combo as failed; the fastest combo with none is applied as Custom. negative adds -5..-1 (off by default); verbose prints every combo with its OK / FAILED / stuck verdict as the sweep runs; stop restores your settings."],

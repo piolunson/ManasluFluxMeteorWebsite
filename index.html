@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#0a0a0a">
 <title>ManasluFlux — Meteor Client addon for Minecraft 1.21.11</title>
-<meta name="description" content="52 modules across seven categories, 29 commands and 7 HUD elements for Meteor Client on Fabric, for Minecraft 1.21.11.">
+<meta name="description" content="53 modules across seven categories, 29 commands and 7 HUD elements for Meteor Client on Fabric, for Minecraft 1.21.11.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
@@ -29,16 +29,16 @@
 
 <main id="top">
   <section class="hero">
-    <p class="chip"><i aria-hidden="true"></i>v1.10.2 · Minecraft 1.21.11 · Fabric · Meteor Client</p>
+    <p class="chip"><i aria-hidden="true"></i>v1.10.3 · Minecraft 1.21.11 · Fabric · Meteor Client</p>
     <h1 id="title" aria-label="ManasluFlux"><span>Manaslu</span><span class="alt">Flux</span></h1>
     <p class="lead">A Meteor Client addon with flight, silent combat, client-side tricks and a handful of tools you'll actually keep enabled.</p>
     <div class="cta">
-      <a class="btn prime" href="#download">Download v1.10.2</a>
+      <a class="btn prime" href="#download">Download v1.10.3</a>
       <a class="btn ghost" href="#modules">Browse the modules</a>
       <a class="btn ghost" href="https://github.com/piolunson/manasluflux" target="_blank" rel="noopener">GitHub</a>
     </div>
     <ul class="stats">
-      <li><b data-count="52">0</b><span>Modules</span></li>
+      <li><b data-count="53">0</b><span>Modules</span></li>
       <li><b data-count="29">0</b><span>Commands</span></li>
       <li><b data-count="7">0</b><span>HUD elements</span></li>
     </ul>
@@ -48,7 +48,7 @@
     <div class="head">
       <div>
         <h2>Modules</h2>
-        <p class="sub" id="modcount" aria-live="polite">52 / 52 shown</p>
+        <p class="sub" id="modcount" aria-live="polite">53 / 53 shown</p>
       </div>
       <div class="find">
         <input id="q" type="search" placeholder="Search modules" aria-label="Search modules">
@@ -84,7 +84,8 @@
   <section id="history" class="panel reveal">
     <div class="head"><h2>Changelog</h2></div>
     <ol class="log">
-<li class="now"><b>1.10.2</b><span><b>Universal Cobweb Bypass gets a <code>verbose</code> mode</b> (default off). Turn it on and the module says what it is actually doing instead of working silently: a one-shot summary of every setting it switched on when you enable it (profile, horizontal/vertical, cap, burst, timer mode and formula, sprint tweaks, lagback action), <b>entering and leaving a web</b>, each <code>reset-on-new-web</code> clock restart, the <b>timer as it ramps</b> (reported only when it moves by 0.5x, so a graph curve doesn't spam chat), what the <b>sprint tweaks</b> did, and the exact numbers a profile applied. Counts: 52 modules, 29 commands.</span></li>
+<li class="now"><b>1.10.3</b><span><b>New module: Wool Replace</b> (<code>wool-replace</code>) — <b>places wool while you are holding obsidian</b>. Right-click a block with obsidian in hand and the placement goes out as wool; your obsidian is selected again the moment the click is done. No settings, no position or target checks — it just does that while enabled. It has to swap the hotbar slot rather than edit the packet, because the placement packet carries only the hand, hit result, sequence and screen-handler revision — <b>not the item</b>; the server decides what to place from the item it thinks you hold. A mixin swaps in the wool slot at the head of <code>interactBlock</code> so vanilla builds <i>and predicts</i> a wool placement (no ghost block), then swaps back. Requires wool in your hotbar — with none, the click stays an obsidian placement, because there is no honest way to fake the held item. Counts: 53 modules, 29 commands.</span></li>
+<li><b>1.10.2</b><span><b>Universal Cobweb Bypass gets a <code>verbose</code> mode</b> (default off). Turn it on and the module says what it is actually doing instead of working silently: a one-shot summary of every setting it switched on when you enable it (profile, horizontal/vertical, cap, burst, timer mode and formula, sprint tweaks, lagback action), <b>entering and leaving a web</b>, each <code>reset-on-new-web</code> clock restart, the <b>timer as it ramps</b> (reported only when it moves by 0.5x, so a graph curve doesn't spam chat), what the <b>sprint tweaks</b> did, and the exact numbers a profile applied. Counts: 52 modules, 29 commands.</span></li>
 <li><b>1.10.1</b><span><b>New module: Packet Stealer</b> (<code>packet-stealer</code>) — records <b>everything the server sends your client about one player</b>, with ISO-8601 UTC timestamps, into <code>.minecraft/manasluflux/packetstealer/&lt;name&gt;.json</code> (one JSON object per line, so a crash mid-session doesn't corrupt it). Worth being straight about the premise: a vanilla client never receives another player's packets — the server only broadcasts the <i>effects</i> of what they did, so that is what gets captured: movement and teleports, velocity, swings and criticals, <b>totem pops</b> and death, <b>damage</b> with its source, <b>equipment changes</b> (what they are holding) and optionally raw data-tracker updates. <code>target</code> is a name, or empty to pick the nearest player within <code>range</code> when you switch it on; <code>movement</code> is off by default (~20 lines a second), <code>equipment</code> on, <code>data-tracker</code> off. Counts: 52 modules, 29 commands.</span></li>
 <li><b>1.10.0</b><span><b>New module: Packet Filter</b> (<code>packet-filter</code>) and <b>new command <code>.mfpacketlimit</code></b>. The module holds a <b>packets-per-second budget</b> and drops the <b>least important</b> packet first instead of whatever arrives next: placing obsidian/crystals, breaking crystals, totem swaps, swings and inventory clicks are <b>critical and never dropped</b>; movement drops only once the budget is stretched a quarter past its limit; chat, sprint/sneak state and custom payloads go first. <code>preset</code> CPvP ranks a fight's packets top, Generic keeps only inventory/use/respawn critical. The command: <code>.mfpacketlimit test [packets-per-tick]</code> floods the server with look packets until it kicks you and reports <b>how many went out and how fast</b> (it will disconnect you — that is the measurement — and it stops itself after 60 s), and <code>.mfpacketlimit check</code> prints the budget, preset, sent/filtered/peak per second plus the last test's result, which survives the kick. Counts: 51 modules, 29 commands.</span></li>
 <li><b>1.9.4</b><span><b>Universal Cobweb Bypass gets <code>reset-on-new-web</code></b> (default on). The graph timer's clock and the sprint tweaks' tick counter now restart as soon as you walk out of one cobweb into another — <b>even when the two touch</b>. "This web" is the set of web blocks that was under your box when you entered it, so a hop from web A into the touching web B (you straddle both for a few ticks) resets the moment A is gone, instead of the ramp carrying on across the whole corridor. Standing still in one web still counts up normally, and leaving into open air resets as before. Switch it off and the old behaviour comes back: the clock only restarts once you have been out of a web. Counts: 50 modules, 28 commands.</span></li>
@@ -129,8 +130,8 @@
 
   <section id="download" class="panel reveal dl">
     <h2>Get the jar</h2>
-    <p class="sub">Drop <code>manasluflux-1.10.2.jar</code> into your <code>mods</code> folder next to Meteor Client — Baritone is already inside.</p>
-    <a class="btn prime" href="downloads/manasluflux-1.10.2.jar" download id="dlbtn">manasluflux-1.10.2.jar</a>
+    <p class="sub">Drop <code>manasluflux-1.10.3.jar</code> into your <code>mods</code> folder next to Meteor Client — Baritone is already inside.</p>
+    <a class="btn prime" href="downloads/manasluflux-1.10.3.jar" download id="dlbtn">manasluflux-1.10.3.jar</a>
     <p class="fine">Requires Minecraft 1.21.11, Fabric Loader and Meteor Client.</p>
   </section>
 </main>

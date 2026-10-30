@@ -44,6 +44,7 @@ const MODS=[
 ["Universal Flight","Bypasses","Vanilla creative flight with adjustable speed. Force it on all the time, or toggle it with a double-jump like creative (always-fly option)."],
 ["Waypoint","Utility","Stores waypoints added with .mfwaypoint and renders beacon-like beams to them."],
 ["Whitelist Fast Use","Player","Toggles Meteor's FastUse automatically based on the item you're holding."],
+["Wool Replace","Client Side","Places wool while you are holding obsidian: right-click a block with obsidian in hand and the placement goes out as wool, with your obsidian selected again the moment the click is done. No settings and no position checks. It swaps the hotbar slot instead of editing the packet, because the placement packet does not carry the item - the server decides what gets placed from what it thinks you hold - so vanilla builds and predicts the wool placement itself, with no ghost block. Needs wool in the hotbar."],
 ["World Origin","Utility","Example module that highlights the center of the world."],
 ["Auto Login","Player","Sends /login <password> (both configurable) automatically after joining a server, or when chat shows a trigger word like \"register\". Supports delays, cooldowns and repeats."],
 ["Client-Side Night Vision","Client Side","Night vision that only exists on your client. The server never sees the effect."],

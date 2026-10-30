@@ -45,6 +45,7 @@ const MODS=[
 ["World Origin","Utility","Example module that highlights the center of the world."],
 ["Auto Login","Player","Sends /login <password> (both configurable) automatically after joining a server, or when chat shows a trigger word like \"register\". Supports delays, cooldowns and repeats."],
 ["Client-Side Night Vision","Client Side","Night vision that only exists on your client. The server never sees the effect."],
+["Break Reminder","Client Side","Reminds you to take a break every so many minutes - set the interval in minutes (default 45) and it speaks up in chat and as the big title text on screen. The clock is wall-clock, not ticks, and it restarts whenever the module is switched on."],
 ["Client Block Entities","Client Side","Pick any block entity types (chests, signs, beacons, spawners...) and their rendering becomes client-side only - replaced by a static box or hidden entirely. The block itself still renders normally."],
 ["Anti Drop Lagback","Client Side","Counts rubberband corrections (server position syncs that snap you back) inside a sliding time window; passing the cap pauses every other active module for a set amount of ticks so the cause stops, then resumes them. Chat notifier included, purely client-side."],
 ["Toggle Tab","Client Side","Keeps the player list open by making the game think you're holding Tab."],

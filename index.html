@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#0a0a0a">
 <title>ManasluFlux — Meteor Client addon for Minecraft 1.21.11</title>
-<meta name="description" content="48 modules across seven categories, 28 commands and 7 HUD elements for Meteor Client on Fabric, for Minecraft 1.21.11.">
+<meta name="description" content="49 modules across seven categories, 28 commands and 7 HUD elements for Meteor Client on Fabric, for Minecraft 1.21.11.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
@@ -29,16 +29,16 @@
 
 <main id="top">
   <section class="hero">
-    <p class="chip"><i aria-hidden="true"></i>v1.9.1 · Minecraft 1.21.11 · Fabric · Meteor Client</p>
+    <p class="chip"><i aria-hidden="true"></i>v1.9.2 · Minecraft 1.21.11 · Fabric · Meteor Client</p>
     <h1 id="title" aria-label="ManasluFlux"><span>Manaslu</span><span class="alt">Flux</span></h1>
     <p class="lead">A Meteor Client addon with flight, silent combat, client-side tricks and a handful of tools you'll actually keep enabled.</p>
     <div class="cta">
-      <a class="btn prime" href="#download">Download v1.9.1</a>
+      <a class="btn prime" href="#download">Download v1.9.2</a>
       <a class="btn ghost" href="#modules">Browse the modules</a>
       <a class="btn ghost" href="https://github.com/piolunson/manasluflux" target="_blank" rel="noopener">GitHub</a>
     </div>
     <ul class="stats">
-      <li><b data-count="48">0</b><span>Modules</span></li>
+      <li><b data-count="49">0</b><span>Modules</span></li>
       <li><b data-count="28">0</b><span>Commands</span></li>
       <li><b data-count="7">0</b><span>HUD elements</span></li>
     </ul>
@@ -48,7 +48,7 @@
     <div class="head">
       <div>
         <h2>Modules</h2>
-        <p class="sub" id="modcount" aria-live="polite">48 / 48 shown</p>
+        <p class="sub" id="modcount" aria-live="polite">49 / 49 shown</p>
       </div>
       <div class="find">
         <input id="q" type="search" placeholder="Search modules" aria-label="Search modules">
@@ -84,7 +84,8 @@
   <section id="history" class="panel reveal">
     <div class="head"><h2>Changelog</h2></div>
     <ol class="log">
-<li class="now"><b>1.9.1</b><span><b>New module: British Chat</b> (<code>british-chat</code>) — tidies every message you send: a capital letter at the start (and after each sentence), a full stop at the end, and with <code>grammar-correct</code> on it fixes the words everyone mistypes mid-fight — missing apostrophes (<code>dont</code>, <code>cant</code>, <code>wont</code>, <code>im</code>), swapped letters (<code>teh</code>, <code>adn</code>, <code>recieve</code>) and chat shorthand (<code>u</code>, <code>ur</code>, <code>pls</code>, <code>idk</code>, <code>ty</code>, <code>rn</code>) — plus doubled spaces and spaces before punctuation. It rewrites the message before Meteor signs it, so the tidied text is what the server receives and nothing is sent twice. Commands are never touched, and a dot glued to lowercase (a hostname like <code>mc.hypixel.net</code>, or <code>3.5</code>) is never treated as a sentence break. It is a fixed rule list rather than a language model, so unknown words pass through exactly as typed. Counts: 48 modules, 28 commands.</span></li>
+<li class="now"><b>1.9.2</b><span><b>New module: Screenshot</b> (<code>screenshot</code>) — puts a screenshot of the game <b>straight on your clipboard</b> instead of saving a file, so it can be pasted into Discord immediately. One-shot: bind a key, press it, the module switches itself back off. It grabs the frame through vanilla's own <code>ScreenshotRecorder</code>, so it matches an F2 screenshot exactly, and hands the clipboard write to its own thread because Windows can block there while other apps read the image; any failure is reported in chat. <b>The Bypasses category is now named honestly:</b> every module in it carries a <b>Universal</b> prefix, because none of them target one anticheat — <code>universal-cobweb-bypass</code>, <code>universal-click-tp</code>, <code>universal-pearl-phase</code>, <code>universal-vclip-phasefill</code> and <code>universal-flight</code>. Per-server differences live in settings (Cobweb Bypass keeps its Vanilla / NCP / Themis / Grim profiles), not in the module's name. Counts: 49 modules, 28 commands.</span></li>
+<li><b>1.9.1</b><span><b>New module: British Chat</b> (<code>british-chat</code>) — tidies every message you send: a capital letter at the start (and after each sentence), a full stop at the end, and with <code>grammar-correct</code> on it fixes the words everyone mistypes mid-fight — missing apostrophes (<code>dont</code>, <code>cant</code>, <code>wont</code>, <code>im</code>), swapped letters (<code>teh</code>, <code>adn</code>, <code>recieve</code>) and chat shorthand (<code>u</code>, <code>ur</code>, <code>pls</code>, <code>idk</code>, <code>ty</code>, <code>rn</code>) — plus doubled spaces and spaces before punctuation. It rewrites the message before Meteor signs it, so the tidied text is what the server receives and nothing is sent twice. Commands are never touched, and a dot glued to lowercase (a hostname like <code>mc.hypixel.net</code>, or <code>3.5</code>) is never treated as a sentence break. It is a fixed rule list rather than a language model, so unknown words pass through exactly as typed. Counts: 48 modules, 28 commands.</span></li>
 <li><b>1.9.0</b><span><b>New module: Bed Aura</b> (<code>mf-bed-aura</code>) — places and pops <b>beds</b> in the Nether and the End and <b>charged respawn anchors</b> in the Overworld and the End, picking whichever the dimension lets explode and falling back to the other item when the first isn't in your inventory, so one module covers every dimension. Their bed geometry: rotate to a cardinal direction so the bed's head half lands on the target block, both halves must be free, then pop it with a plain use (an anchor pops with a glowstone-free use, so the glowstone you charged it with stays out of that hand). Settings: <code>place-delay</code>, <code>target-range</code>, <code>min-damage</code>, <code>max-self-damage</code>, <code>anti-suicide</code>, <code>place-range</code>, <code>auto-switch</code>, <code>anchor-charges</code> (1–4 glowstone), <code>charge-delay</code>, pause on eat/drink/mine, and a render box. Every numeric setting runs 0–10000. Counts: 47 modules, 28 commands.</span></li>
 <li><b>1.8.0</b><span><b>Graph timer gets a <code>max-timer</code> ceiling</b> (default 10, 0 = no cap). It clamps the curve, so a steep formula or a big scale stops at the cap instead of handing the server a huge tick jump; Constant mode is untouched. <code>.mfvisualizewebbypassgraph</code> draws it as a green dashed line, and the samples are already clamped, so the chart shows the real ceiling.</span></li>
 <li><b>1.7.0</b><span><b>New command <code>.mfvisualizewebbypassgraph</code>.</b> It opens your browser on a chart of the Cobweb Bypass timer: the multiplier over the first 20 seconds in a web, sampled from the module's own formula once every 0.05 s, so the picture always matches what the timer is doing. Chips carry the mode, formula, scale, web-timer and peak; a slider and pointer hover scrub the curve (1.00x at 0s, 8.44x at 3s, 9.60x plateau on the defaults); a formula that does not parse shows an error card instead of a fake curve. Counts: 46 modules, 28 commands.</span></li>
@@ -123,8 +124,8 @@
 
   <section id="download" class="panel reveal dl">
     <h2>Get the jar</h2>
-    <p class="sub">Drop <code>manasluflux-1.9.1.jar</code> into your <code>mods</code> folder next to Meteor Client — Baritone is already inside.</p>
-    <a class="btn prime" href="downloads/manasluflux-1.9.1.jar" download id="dlbtn">manasluflux-1.9.1.jar</a>
+    <p class="sub">Drop <code>manasluflux-1.9.2.jar</code> into your <code>mods</code> folder next to Meteor Client — Baritone is already inside.</p>
+    <a class="btn prime" href="downloads/manasluflux-1.9.2.jar" download id="dlbtn">manasluflux-1.9.2.jar</a>
     <p class="fine">Requires Minecraft 1.21.11, Fabric Loader and Meteor Client.</p>
   </section>
 </main>

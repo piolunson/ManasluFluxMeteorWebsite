@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#0a0a0a">
 <title>ManasluFlux — Meteor Client addon for Minecraft 1.21.11</title>
-<meta name="description" content="55 modules across seven categories, 29 commands and 7 HUD elements for Meteor Client on Fabric, for Minecraft 1.21.11.">
+<meta name="description" content="56 modules across seven categories, 29 commands and 7 HUD elements for Meteor Client on Fabric, for Minecraft 1.21.11.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
@@ -29,16 +29,16 @@
 
 <main id="top">
   <section class="hero">
-    <p class="chip"><i aria-hidden="true"></i>v1.11.6 · Minecraft 1.21.11 · Fabric · Meteor Client</p>
+    <p class="chip"><i aria-hidden="true"></i>v1.11.7 · Minecraft 1.21.11 · Fabric · Meteor Client</p>
     <h1 id="title" aria-label="ManasluFlux"><span>Manaslu</span><span class="alt">Flux</span></h1>
     <p class="lead">A Meteor Client addon with flight, silent combat, client-side tricks and a handful of tools you'll actually keep enabled.</p>
     <div class="cta">
-      <a class="btn prime" href="#download">Download v1.11.6</a>
+      <a class="btn prime" href="#download">Download v1.11.7</a>
       <a class="btn ghost" href="#modules">Browse the modules</a>
       <a class="btn ghost" href="https://github.com/piolunson/manasluflux" target="_blank" rel="noopener">GitHub</a>
     </div>
     <ul class="stats">
-      <li><b data-count="55">0</b><span>Modules</span></li>
+      <li><b data-count="56">0</b><span>Modules</span></li>
       <li><b data-count="29">0</b><span>Commands</span></li>
       <li><b data-count="7">0</b><span>HUD elements</span></li>
     </ul>
@@ -48,7 +48,7 @@
     <div class="head">
       <div>
         <h2>Modules</h2>
-        <p class="sub" id="modcount" aria-live="polite">55 / 55 shown</p>
+        <p class="sub" id="modcount" aria-live="polite">56 / 56 shown</p>
       </div>
       <div class="find">
         <input id="q" type="search" placeholder="Search modules" aria-label="Search modules">
@@ -84,7 +84,8 @@
   <section id="history" class="panel reveal">
     <div class="head"><h2>Changelog</h2></div>
     <ol class="log">
-<li class="now"><b>1.11.6</b><span><b>New module: <code>totempoppearlphase</code> (Totem Pop Pearl Phase).</b> When your own totem pops - read from the server as <code>USE_TOTEM_OF_UNDYING</code> for your entity, the same signal that plays the animation - it throws one pearl after <code>delay</code> ticks (default 2), so the panic turn after a pop is a phase instead of a scramble. If a <b>frame or painting is inside you</b> (its box intersects yours) and <code>frame-bypass</code> is on, it aims at the <b>clear band around it</b> - a corner or edge of the face it hangs on, outside its 12/16-wide box, <code>offset</code> 0.46, pitch 85 - and only uses a point that is outside every decoration box (grown by the pearl 0.125 radius) and within reach, so a fully covered face falls back to the plain throw rather than feeding the frame a pearl. Nothing inside you means plain BlackOut own-block aim. The rotation goes out as a look packet, <code>stable-cam</code> (default on) puts your view straight back in the same tick, the pearl comes from your hand or silently from your hotbar, and it repeats on every pop. Counts: 55 modules, Bypasses back to 8, 29 commands.</span></li>
+<li class="now"><b>1.11.7</b><span><b>New module: <code>mf-speed-mine</code> (Speed Mine)</b> - a port of Homovore's SpeedMine (<a href="https://github.com/leonetics/homovore-public">leonetics/homovore-public</a>, AGPL-3.0, original vendored unmodified in <code>homovore/</code>). Your click is cancelled and the break runs on <b>our own packets</b>: the start goes out with the <b>best tool held</b>, progress is predicted from the real break delta, and the stop follows as soon as it passes <code>threshold</code> (0.7). <code>grim-decoy</code> adds a second block-start <b>2000 blocks below the world</b> so the pair Grim sees does not read as one impossibly fast break, and a 275 ms delay budget keeps the cadence inside what the server tolerates. <code>double-break</code> demotes a break to a second slot so a new click starts immediately, <code>break-ahead</code> also mines the block your ray continues into (rejected on corner grazes), <code>rebreak</code> keeps re-sending the stop, <code>pause-on-eat</code> never swaps mid-gap, plus <code>break-delay</code>, <code>swing</code>, <code>range</code> and a shrinking render box. The id is <code>mf-speed-mine</code> because Meteor ships its own SpeedMine. <b>License:</b> Homovore is AGPL-3.0, so a distributed build with this port is an AGPL-3.0 work (GPLv3 section 13). <b>Also fixed:</b> the command list was missing a separator after one entry, so the page threw at that line and two commands never rendered - all 29 now do. Counts: 56 modules, 29 commands.</span></li>
+<li><b>1.11.6</b><span><b>New module: <code>totempoppearlphase</code> (Totem Pop Pearl Phase).</b> When your own totem pops - read from the server as <code>USE_TOTEM_OF_UNDYING</code> for your entity, the same signal that plays the animation - it throws one pearl after <code>delay</code> ticks (default 2), so the panic turn after a pop is a phase instead of a scramble. If a <b>frame or painting is inside you</b> (its box intersects yours) and <code>frame-bypass</code> is on, it aims at the <b>clear band around it</b> - a corner or edge of the face it hangs on, outside its 12/16-wide box, <code>offset</code> 0.46, pitch 85 - and only uses a point that is outside every decoration box (grown by the pearl 0.125 radius) and within reach, so a fully covered face falls back to the plain throw rather than feeding the frame a pearl. Nothing inside you means plain BlackOut own-block aim. The rotation goes out as a look packet, <code>stable-cam</code> (default on) puts your view straight back in the same tick, the pearl comes from your hand or silently from your hotbar, and it repeats on every pop. Counts: 55 modules, Bypasses back to 8, 29 commands.</span></li>
 <li><b>1.11.5</b><span><b>The item-frame phase modules are gone; in their place is the plain thing they were wrapping: <code>universal-jump-pearl</code>.</b> It sneaks, jumps, and throws the pearl at <code>jump-percent</code> (default <b>55</b>) of the jump - measured against the real vanilla arc (0.42 blocks/tick up, 0.08 gravity, 0.98 drag, peak <b>1.2522 blocks</b>), so 55% is about 0.69 blocks off the ground rather than an arbitrary tick, and 0 throws on takeoff. If the jump cannot get that high (ceiling, slab, low gravity) it says so and <b>spends no pearl</b>. Aim is BlackOut's Auto Pearl one (own block centre turned 180 degrees, <code>pitch</code> 85), the rotation goes out as a look packet, and <b><code>stable-cam</code></b> (default on) puts your view straight back in the same tick so the screen never snaps - off, the camera stays turned at the throw. The pearl comes from your hand or the first one in your hotbar (silently selected and switched back), <code>sneak</code> holds the crouch until the throw. Bypasses drops from 8 to 7 modules, 55 to 54 overall. <b>Also fixed:</b> two module entries in the site data were missing a separator and were being parsed as one. Counts: 54 modules, 29 commands.</span></li>
 <li><b>1.11.4</b><span><b>Item-frame phase is now an actual frame-aware <i>pearl</i> phase</b> (<code>ncp-itemframe</code>, <code>th-itemframe</code>). The old version pushed you with position packets, which was the wrong tool: pearl phase is what a frame breaks, because an item frame's box is <b>12/16 wide and 1/16 thick</b> in front of the face, vanilla lets a pearl hit it, and the server owns the pearl — so a hidden frame client-side changes nothing. Both modules now throw the pearl at a point in the <b>band around the frame</b> (the frame covers the middle 0.375 of the face, the face ends at 0.5) with BlackOut's steep pitch, try up to 8 points (corners then edges), and <b>measure every throw</b>: a position packet means the server moved you, nothing means the next point. Points whose ray crosses a frame box are skipped by geometry before a pearl is spent, a fully covered face (map frame) is reported instead of thrown at, and <code>aim</code> <b>OwnBlock</b> is plain BlackOut pearl phase as the fallback. NCP sends its rotation 2 ticks early and answers in 8; Themis throws on the same tick and waits 14. Counts: 55 modules, 29 commands.</span></li>
 <li><b>1.11.3</b><span><b>Cobweb Bypass now reacts to repeated rubberbands.</b> New <code>lagback-limit</code> (default <b>2</b>, 0 = off) counts the server's setbacks <b>per cobweb</b>: once it has pulled you back <b>more</b> than that many times in the same web, the module reacts once — <code>lagback-reset-timer</code> (default on) restarts the web clock so the graph timer climbs from 1x again, and <code>lagback-stop-sprint</code> (default on) takes sprint away for the rest of that web, where neither the sprint tweaks nor a held sprint key can put it back until you leave. The count starts over when you enter a different web, following <code>reset-on-new-web</code>, so touching cobwebs count separately. <code>verbose</code> prints the rule you configured and every reaction. Counts: 55 modules, 29 commands.</span></li>

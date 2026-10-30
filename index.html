@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#0a0a0a">
 <title>ManasluFlux — Meteor Client addon for Minecraft 1.21.11</title>
-<meta name="description" content="68 modules across seven categories, 30 commands and 7 HUD elements for Meteor Client on Fabric, for Minecraft 1.21.11.">
+<meta name="description" content="69 modules across seven categories, 30 commands and 7 HUD elements for Meteor Client on Fabric, for Minecraft 1.21.11.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
@@ -29,11 +29,11 @@
 
 <main id="top">
   <section class="hero">
-    <p class="chip"><i aria-hidden="true"></i>v1.15.10 · Minecraft 1.21.11 · Fabric · Meteor Client</p>
+    <p class="chip"><i aria-hidden="true"></i>v1.15.11 · Minecraft 1.21.11 · Fabric · Meteor Client</p>
     <h1 id="title" aria-label="ManasluFlux"><span>Manaslu</span><span class="alt">Flux</span></h1>
     <p class="lead">A Meteor Client addon with flight, silent combat, client-side tricks and a handful of tools you'll actually keep enabled.</p>
     <div class="cta">
-      <a class="btn prime" href="#download">Download v1.15.10</a>
+      <a class="btn prime" href="#download">Download v1.15.11</a>
       <a class="btn ghost" href="#modules">Browse the modules</a>
       <a class="btn ghost" href="https://github.com/piolunson/manasluflux" target="_blank" rel="noopener">GitHub</a>
     </div>
@@ -84,7 +84,8 @@
   <section id="history" class="panel reveal">
     <div class="head"><h2>Changelog</h2></div>
     <ol class="log">
-<li class="now"><b>1.15.10</b><span><b>Elytra Bounce is Meteor's file now, not a rewrite.</b> 1.15.9 reimplemented the bounce and bolted a walk layer on top; this is Meteor Client's <code>ElytraFly</code> <b>Bounce</b> mode copied across as-is - same <b>yaw-lock</b> (Meteor's own lock modes: None / Smart / Simple), <b>pitch-lock</b> at 85&deg;, <b>auto-jump</b>, <b>sprint-constantly</b>, <b>restart</b> / <b>restart-delay</b>, <b>manual-takeoff</b>, same tick and packet order - and the only added code is the nudge: when a block stops the bounce, <b>baritone-nudge</b> sends Baritone <b>nudge-blocks</b> (default 4) forward after <b>blocked-ticks</b> (default 5) against it, then the bounce takes over again. The axis lock, the 50-block walker, the Self walker and the speed stall are gone. Counts unchanged: 68 modules, Movement 5.</span></li>
+<li class="now"><b>1.15.11</b><span><b>New module: Firework Elytra Fly</b> (<code>firework-elytra-fly</code>, Movement). Elytra flight flown with fireworks: <b>auto-fireworks</b> fires a rocket only while your horizontal speed is under <b>target-speed</b> (35 blocks/second by default) and at most every <b>firework-delay</b> (1.5 s), from a silent hotbar swap put straight back. <b>auto-takeoff</b>, <b>lock-pitch</b> / <b>pitch</b> for level rockets, <b>stop-in-water</b>, and <b>toggle-elytra</b> (elytra on at enable, chestplate back at disable). <b>fake-fly</b> is the chestplate trick from Stashhunting's <code>ElytraFlyPlusPlus</code>: the hotbar elytra is swapped into the server's chest slot for one start-gliding packet and straight back, so you glide while wearing a chestplate and use no elytra durability. Counts: 69 modules, Movement 6.</span></li>
+<li><b>1.15.10</b><span><b>Elytra Bounce is Meteor's file now, not a rewrite.</b> 1.15.9 reimplemented the bounce and bolted a walk layer on top; this is Meteor Client's <code>ElytraFly</code> <b>Bounce</b> mode copied across as-is - same <b>yaw-lock</b> (Meteor's own lock modes: None / Smart / Simple), <b>pitch-lock</b> at 85&deg;, <b>auto-jump</b>, <b>sprint-constantly</b>, <b>restart</b> / <b>restart-delay</b>, <b>manual-takeoff</b>, same tick and packet order - and the only added code is the nudge: when a block stops the bounce, <b>baritone-nudge</b> sends Baritone <b>nudge-blocks</b> (default 4) forward after <b>blocked-ticks</b> (default 5) against it, then the bounce takes over again. The axis lock, the 50-block walker, the Self walker and the speed stall are gone. Counts unchanged: 68 modules, Movement 5.</span></li>
 <li><b>1.15.9</b><span><b>Elytra Bounce is now Meteor's actual bounce.</b> 1.15.8 only held the jump key and let vanilla do the rest; this is Meteor Client's <code>ElytraFly</code> <b>Bounce</b> mode (Meteor Development, GPL-3.0) ported one to one - the start-gliding packet sent from the jump key (one press recasts, no double jump), <b>yaw-lock</b> None / Smart (45&deg; steps) / Simple / <b>Axis</b> for the highway, <b>pitch-lock</b> at 85&deg; (the dive that makes it skim), <b>auto-jump</b>, <b>sprint-constantly</b> with the elytra FOV pulse flattened, and rubberband recovery (<b>restart</b>, <b>restart-delay</b> 7) that clears the local gliding flag and recasts. The <b>Self</b> walk is better: it aims a few blocks ahead on the line instead of at the far goal (straight, no weaving near the end), sprint-jumps 1-block steps, slows for the last blocks, and <b>stop-at-edge</b> (default on) stops at the end of the highway instead of walking off it. <b>keep-heading</b> is gone - <b>yaw-lock: Axis</b> does it. Counts unchanged: 68 modules, Movement 5.</span></li>
 <li><b>1.15.8</b><span><b>New module: Elytra Bounce</b> (<code>mf-elytra-bounce</code>, Movement) - bounce along a highway, then walk the distance you set when the bounce stops. Held jump does the bouncing: vanilla jumps on the ground and recasts the elytra in the air, forward stays held through the landings so the hop keeps its speed, and <b>keep-heading</b> locks the yaw to the road axis (<b>axis</b>: Auto / +X / -X / +Z / -Z). When the speed stays under 0.1 for <b>stall-ticks</b> (default 40), or there is no elytra, it walks <b>walk-blocks</b> (default 50) forward along that axis. <b>walk-mode: Baritone</b> sends Meteor's path manager to the exact block, not just the XZ column, so the walk keeps its height instead of diving for a lower route; <b>walk-mode: Self</b> is a built-in walker - face the target, hold forward, sprint, jump only when actually blocked - that ends when the distance is covered or progress stops. Three walks without progress switch the module off; a finished walk hands control back to the bounce. Counts: 68 modules, Movement 5.</span></li>
 <li><b>1.15.7</b><span><b>New module: Trigger Bot</b> (<code>mf-trigger-bot</code>, Combat) - the aura only while you aim. <b>entities</b> is a normal entity-type list (players by default), <b>aura</b> is a module list (Silent Aura by default; add Meteor's Kill Aura or anything else), and <b>range</b> (default 3, up to 8) is the length of its own crosshair ray - not <code>mc.crosshairTarget</code>, which stops at the vanilla attack reach, so a longer-reach aura still triggers. Looking away switches off only what it switched on, an aura you enabled yourself is left running, turning the module off releases everything it started, and a module you switch off mid-look stays off. Counts: 67 modules, Combat 10.</span></li>
@@ -159,8 +160,8 @@
 
   <section id="download" class="panel reveal dl">
     <h2>Get the jar</h2>
-    <p class="sub">Drop <code>manasluflux-1.15.10.jar</code> into your <code>mods</code> folder next to Meteor Client — Baritone is already inside.</p>
-    <a class="btn prime" href="downloads/manasluflux-1.15.10.jar" download id="dlbtn">manasluflux-1.15.10.jar</a>
+    <p class="sub">Drop <code>manasluflux-1.15.11.jar</code> into your <code>mods</code> folder next to Meteor Client — Baritone is already inside.</p>
+    <a class="btn prime" href="downloads/manasluflux-1.15.11.jar" download id="dlbtn">manasluflux-1.15.11.jar</a>
     <p class="fine">Requires Minecraft 1.21.11, Fabric Loader and Meteor Client.</p>
   </section>
 </main>

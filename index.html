@@ -29,11 +29,11 @@
 
 <main id="top">
   <section class="hero">
-    <p class="chip"><i aria-hidden="true"></i>v1.15.14 · Minecraft 1.21.11 · Fabric · Meteor Client</p>
+    <p class="chip"><i aria-hidden="true"></i>v1.15.15 · Minecraft 1.21.11 · Fabric · Meteor Client</p>
     <h1 id="title" aria-label="ManasluFlux"><span>Manaslu</span><span class="alt">Flux</span></h1>
     <p class="lead">A Meteor Client addon with flight, silent combat, client-side tricks and a handful of tools you'll actually keep enabled.</p>
     <div class="cta">
-      <a class="btn prime" href="#download">Download v1.15.14</a>
+      <a class="btn prime" href="#download">Download v1.15.15</a>
       <a class="btn ghost" href="#modules">Browse the modules</a>
       <a class="btn ghost" href="https://github.com/piolunson/manasluflux" target="_blank" rel="noopener">GitHub</a>
     </div>
@@ -84,17 +84,17 @@
   <section id="history" class="panel reveal">
     <div class="head"><h2>Changelog</h2></div>
     <ol class="log">
-<li class="now"><b>1.15.14</b><span><b>Firework Elytra Fly no longer rotates you at all.</b> 1.15.13 aimed the camera at your movement direction, which put a rotation on the server every tick and made climbing point at the sky. The module now reads your yaw and never writes it, and sends no look packets: direction comes from the keys relative to your view, climb and dive are straight up and down with the sideways drift zeroed, and the whole flight is a velocity controller - jump / sneak, <b>horizontal-speed</b> (20 blocks/second), <b>vertical-speed</b> (8) and the new <b>responsiveness</b> (0.35) - while rockets keep firing every <b>firework-delay</b> (0.8 s) as the thrust. Hover and fake fly are unchanged. Counts unchanged: 69 modules, Movement 6.</span></li>
+<li class="now"><b>1.15.15</b><span><b>Firework Elytra Fly: the rotation is back, but server-side only.</b> 1.15.14 removed the aimed rotation and with it the steering. The aim - the W/A/S/D direction, 90&deg; up for jump, 90&deg; down for sneak - is now written just before the player tick so the movement packets carry it, and the server and the rocket boost follow it; the camera yaw and pitch are restored immediately after, so first person is a free look with no turning or snapping. Movement stays a velocity controller (<b>horizontal-speed</b> 20, <b>vertical-speed</b> 8, <b>responsiveness</b> 0.35, hover), so the keys remain relative to your view and A/D cannot spin you. Counts unchanged: 69 modules, Movement 6.</span></li>
+<li><b>1.15.14</b><span><b>Firework Elytra Fly no longer rotates you at all.</b> 1.15.13 aimed the camera at your movement direction, which put a rotation on the server every tick and made climbing point at the sky. The module now reads your yaw and never writes it, and sends no look packets: direction comes from the keys relative to your view, climb and dive are straight up and down with the sideways drift zeroed, and the whole flight is a velocity controller - jump / sneak, <b>horizontal-speed</b> (20 blocks/second), <b>vertical-speed</b> (8) and the new <b>responsiveness</b> (0.35) - while rockets keep firing every <b>firework-delay</b> (0.8 s) as the thrust. Hover and fake fly are unchanged. Counts unchanged: 69 modules, Movement 6.</span></li>
 <li><b>1.15.13</b><span><b>Firework Elytra Fly: straight up and down, and no more spinning.</b> Jump with no WASD now aims the rocket straight up and sneak straight down - a full 90&deg; with the sideways velocity zeroed - so vertical flight is a vertical line. A/D no longer spins: the direction was measured from the yaw the module itself wrote every tick, adding another 90&deg; each tick and dragging the camera round; it is now measured from a reference yaw that only follows your mouse and re-bases when the keys change. Counts unchanged: 69 modules, Movement 6.</span></li>
 <li><b>1.15.12</b><span><b>Firework Elytra Fly is a flight controller now.</b> Jump climbs, sneak descends, W/A/S/D move, and the rocket is the thrust: one is lit in your steering direction whenever you are under the set speed, with <b>horizontal-speed</b> (20 blocks/second) and <b>vertical-speed</b> (8) as the ceiling so the speeds stay stable. With no key held, <b>hover</b> stops the glide and holds your position where you let go, and <b>firework-delay</b> (0.8 s) spaces the rockets out. <b>auto-takeoff</b> now only leaves the ground when you press jump. <b>fake-fly</b> (chestplate, hotbar elytra swapped into the server chest slot for the start-gliding packet) is unchanged. Counts unchanged: 69 modules, Movement 6.</span></li>
-<li><b>1.15.11</b><span><b>New module: Firework Elytra Fly</b> (<code>firework-elytra-fly</code>, Movement). Elytra flight flown with fireworks: <b>auto-fireworks</b> fires a rocket only while your horizontal speed is under <b>target-speed</b> (35 blocks/second by default) and at most every <b>firework-delay</b> (1.5 s), from a silent hotbar swap put straight back. <b>auto-takeoff</b>, <b>lock-pitch</b> / <b>pitch</b> for level rockets, <b>stop-in-water</b>, and <b>toggle-elytra</b> (elytra on at enable, chestplate back at disable). <b>fake-fly</b> is the chestplate trick from Stashhunting's <code>ElytraFlyPlusPlus</code>: the hotbar elytra is swapped into the server's chest slot for one start-gliding packet and straight back, so you glide while wearing a chestplate and use no elytra durability. Counts: 69 modules, Movement 6.</span></li>
   </ol>
   </section>
 
   <section id="download" class="panel reveal dl">
     <h2>Get the jar</h2>
-    <p class="sub">Drop <code>manasluflux-1.15.14.jar</code> into your <code>mods</code> folder next to Meteor Client — Baritone is already inside.</p>
-    <a class="btn prime" href="downloads/manasluflux-1.15.14.jar" download id="dlbtn">manasluflux-1.15.14.jar</a>
+    <p class="sub">Drop <code>manasluflux-1.15.15.jar</code> into your <code>mods</code> folder next to Meteor Client — Baritone is already inside.</p>
+    <a class="btn prime" href="downloads/manasluflux-1.15.15.jar" download id="dlbtn">manasluflux-1.15.15.jar</a>
     <p class="fine">Requires Minecraft 1.21.11, Fabric Loader and Meteor Client.</p>
   </section>
 </main>
